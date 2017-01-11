@@ -401,6 +401,11 @@ on small devices, paste the mobile query code up in the buttons section and styl
 there.
 */
 
+.name{
+    z-index: 1000;
+    margin-left: 3%;
+}
+
 .top{
     background-image: url(/websitepicture3.jpg);
     z-index: -100;
