@@ -412,6 +412,9 @@ there.
     z-index: -100;
     color: white;
 }
+.pattern{
+    background-image: url(/app/images/pattern.jpg);
+}
 /* Larger than mobile */
 @media (min-width: 400px) {}
 
