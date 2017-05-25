@@ -57,6 +57,8 @@
 		box-sizing: border-box;
 	}
 
+
+
 /* Grid */
 
 	.row {
@@ -2387,7 +2389,7 @@
 		margin: 0 0 2em -2em;
 	}
 
-		.thumbnails a {
+		.thumbnails a.n{
 			-moz-transition: all 0.2s ease;
 			-webkit-transition: all 0.2s ease;
 			-ms-transition: all 0.2s ease;
@@ -2400,11 +2402,80 @@
 			border-radius: 4px;
 			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 			background-color: rgba(255, 255, 255, 0.075);
+			cursor: default;
+			outline: 0;
+			overflow: hidden;
+		}
+        		.thumbnails a.o{
+			-moz-transition: all 0.2s ease;
+			-webkit-transition: all 0.2s ease;
+			-ms-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+			border-bottom: none;
+			display: block;
+			width: 170%;
+			margin: 0 0 100px 0;
+			text-align: center;
+			border-radius: 4px;
+			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+			background-color: rgba(255, 255, 255, 0.075);
 			cursor: pointer;
 			outline: 0;
 			overflow: hidden;
 		}
+.thumbnails a i {
+    font-size: 80px;
+}
 
+.backarrow{
+    left: 10px;
+    top: 10px;
+    			-moz-transition: all 0.2s ease;
+			-webkit-transition: all 0.2s ease;
+			-ms-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+			border-bottom: none;
+			display: block;
+			width: 100px;
+    height: 100px;
+			margin: 0 0 0 0;
+			text-align: center;
+			border-radius: 4px;
+			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+			background-color: rgba(255, 255, 255, 0.075);
+			cursor: pointer;
+			outline: 0;
+			overflow: hidden;
+    font-size: 70px;
+    position: fixed;
+}
+
+.portbtn{
+  font-size: 40px;
+ 	display: block;
+
+	width: 200px;
+    padding: 8px 20px 8px 100;
+letter-spacing:1px;
+font-weight: bold;
+border-radius: 3px;
+    cursor: pointer;
+    			-moz-transition: all 0.2s ease;
+			-webkit-transition: all 0.2s ease;
+			-ms-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+			border-bottom: none;
+			display: block;
+			width: 100%;
+			margin: 0 0 2em 0;
+			text-align: center;
+			border-radius: 4px;
+			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+			background-color: rgba(255, 255, 255, 0.075);
+
+			outline: 0;
+			overflow: hidden;
+}
 			.thumbnails a img {
 				display: block;
 				width: 100%;
@@ -2413,7 +2484,7 @@
 			}
 
 			.thumbnails a h3 {
-				margin: 1em;
+
 			}
 
 			.thumbnails a:hover {
@@ -2486,6 +2557,11 @@
 				}
 
 		}
+.thumbnails div.o{
+    width: 400px;
+    padding-left: 90px;
+    padding-right: 90px;
+}
 
 /* Poptrox */
 
