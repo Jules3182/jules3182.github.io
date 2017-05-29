@@ -5,7 +5,36 @@
     <title>Julian Baker</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" /> </head>
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+    </head>
 
 <body>
     <div id="particles-js"></div>
@@ -19,8 +48,8 @@
                 <li><a href="https://github.com/jules3182" class="icon style2 fa-github"><span class="label">Github</span></a></li>
                 <li><a href="https://www.facebook.com/julian.baker.100483" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
                 <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon style2 fa-building"><span class="label">StructML</span></a></li>
-                <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                <li><a href="https://structml.github.io/" class="icon style2 fa-building"><span class="label">StructML</span></a></li>
+                <li><a href="#contact" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
             </ul>
         </header>
         <!-- Main -->
@@ -47,7 +76,7 @@
                         <h3>Wide variety of styles and designs</h3> </a>
 
 
-                    <br> <a class="c">Contact Me: <strong><br> (860) 977-8060 <br>  or<br> jtoad23@gmail.com</strong></a> </div>
+                    <br> <a id="contact" class="c">Contact Me: <strong><br> (860) 977-8060 <br>  or<br> jtoad23@gmail.com</strong></a> </div>
                 <div>
                     <a class="n"> <img src="images/thumbs/06.jpg" alt="" />
                         <h3>Filled with your creative flair</h3> </a>
@@ -62,8 +91,8 @@
     </div>
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
-  <!---
-    <script src="assets/js/jquery.poptrox.min.js"></script>-->
+
+    <script src="scrollscript.js"></script>
     <script src="assets/js/skel.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
