@@ -147,15 +147,15 @@ header .header-content .header-content-inner p {
 }
 
 .item-1 {
-	background: url('../images/writing.jpg');
+	background: url('../images/flag-belgium-XL.jpg');
 	}
 
 .item-2 {
-	background: url('../images/concert.jpg');
+	background: url('../images/capital.jpg');
 	}
 
 .item-3 {
-	background: url('../images/pencil_sharpener.jpg');
+	background: url('../images/Democratic-Republic-of-Congo_DX-News_9Q0HQ-6.jpg');
 	}
 
 .item-1,
@@ -171,7 +171,7 @@ header .header-content .header-content-inner p {
 
 .page-footer .contact {
 	padding: 100px 0;
-	background-color: yellowgreen;
+	background-color: #222;
 	color: #fff;
 	}
 
