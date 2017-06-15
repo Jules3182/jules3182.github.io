@@ -204,7 +204,7 @@ header .header-content .header-content-inner p {
 }
 
 .navbar-default .navbar-header .navbar-brand {
-    color: yellowgreen;
+    color: white;
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
@@ -224,7 +224,7 @@ header .header-content .header-content-inner p {
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: yellowgreen!important;
+    color:white;
     background-color: transparent;
 }
 
@@ -268,12 +268,12 @@ header .header-content .header-content-inner p {
 
     .navbar-default.affix .navbar-header .navbar-brand {
         letter-spacing: 0;
-        color: yellowgreen;
+        color: white;
     }
 
     .navbar-default.affix .navbar-header .navbar-brand:hover,
     .navbar-default.affix .navbar-header .navbar-brand:focus {
-        color: #eb3812;
+        color: yellow;
     }
 
     .navbar-default.affix .nav > li>a,
@@ -283,7 +283,7 @@ header .header-content .header-content-inner p {
 
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
-        color: yellowgreen;
+        color: white;
     }
 }
 
@@ -385,7 +385,7 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
     border-color: yellowgreen;
-    background-color: yellowgreen;
+    background-color: white;
 }
 
 .btn-primary .badge {
