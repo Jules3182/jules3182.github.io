@@ -36,13 +36,17 @@ body {
     font-weight: 400;
     font-size: 14px;
     color: var(--gruv-fg);
-    width: 40%;
+    width: 60vh;
     height: 60%;
     margin-top: 5vh;
     margin-bottom: 10vh;
     padding: 10px;
     background-color: var(--gruv-bg);
     border-radius: 20px;
+}
+
+.mainttext{
+    font-size: 2vh;
 }
 
 .circular {
@@ -67,6 +71,13 @@ body {
     padding: 10px;
 }
 
+.neon-o:hover {
+    border: 1px solid var(--gruv-aqua);
+    -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
+    box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
+    padding: 10px;
+}
+
 .neon-bar {
     border-bottom: 1px solid var(--gruv-aqua);
     -webkit-box-shadow: 0px 5px 10px -4px var(--gruv-aqua);
@@ -87,10 +98,21 @@ body {
 .sub-title {
     color: var(--gruv-orange);
     font-family: Neon;
+    font-size: 3vh;
+    -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
+    text-shadow: 0px 0px 10px var(--gruv-orange);
+    animation: flicker 3s linear infinite;
+}
+
+.sub-sub-title {
+    color: var(--gruv-orange);
+    font-family: Neon;
     font-size: 2vh;
     -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
     text-shadow: 0px 0px 10px var(--gruv-orange);
     animation: flicker 3s linear infinite;
+    text-align: left;
+    padding-left: 3vh;
 }
 
 .navbar {
@@ -103,12 +125,12 @@ body {
 .nav-el {
     display: inline;
     margin-top: auto;
-    margin-left: 1vh;
-    margin-right: 1vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
     font-size: 3.3vh;
     background-color: rgba(40, 36, 34, 1);
 }
-a{
+a {
     color: var(--gruv-fg);
     text-decoration: none;
     font-family: Neon;
@@ -120,6 +142,20 @@ a{
     animation: flicker 10s linear infinite;
 
 }
+
+a:hover {
+    color: var(--gruv-fg);
+    text-decoration: none;
+    font-family: Neon;
+    color: var(--gruv-aqua);
+    font-family: Neon;
+    font-size: 3vh;
+    -webkit-text-shadow: 0px 0px 10px var(--gruv-aqua);
+    text-shadow: 0px 0px 10px var(--gruv-aqua);
+    animation: flicker 10s linear infinite;
+
+}
+
 .textBox {}
 
 ul{
@@ -138,6 +174,12 @@ hr {
     border: 1px solid var(--gruv-aqua);
     box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
 }
+
+.page-l{
+    display: inline;
+    font-size: 30%;
+}
+
 
 /* Sweet Flicker borrowed from https://codepen.io/mandymichael/pen/aJLYVz */
 
