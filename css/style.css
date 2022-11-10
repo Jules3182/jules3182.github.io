@@ -1,0 +1,102 @@
+:root {
+    --gruv-aqua: #8ec07c;
+    --gruv-bg: rgba(60, 56, 54, 0.3);
+    --gruv-fg: #ebdbb2;
+    --gruv-orange: #fe8019;
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/fulls/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+
+}
+
+@font-face {
+    font-family: 'Quantum';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Quantum'), local('Quantum'), url("../fonts/Quantum.otf");
+}
+
+@font-face {
+    font-family: 'Neon';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Neon'), local('Neon'), url("../fonts/NEON.TTF");
+}
+
+.infobox {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gruv-fg);
+    width: 40%;
+    height: 60%;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    padding: 10px;
+    background-color: var(--gruv-bg);
+    border-radius: 20px;
+}
+
+.circular {
+    display: block;
+    margin-top: 20vh;
+    margin-bottom: 0;
+    border-radius: 50%;
+    width: 30vh;
+    height: 30vh
+}
+
+.neon {
+    border: 1px solid var(--gruv-aqua);
+    -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
+    box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
+}
+
+.neon-bar {
+    border-bottom: 1px solid var(--gruv-aqua);
+    -webkit-box-shadow: 0px 5px 10px -4px var(--gruv-aqua);
+    box-shadow: 0px 5px 10px -4px var(--gruv-aqua);
+    background-color: rgba(60, 56, 54, 0.7);
+    height: 5vh;
+}
+
+.title {
+    color: var(--gruv-orange);
+    font-family: Neon;
+    font-size: 3vh;
+    -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
+    text-shadow: 0px 0px 10px var(--gruv-orange);
+}
+
+.navbar {
+    list-style-type: none;
+}
+
+.nav-el {
+    display: inline;
+    margin-top: auto;
+    margin: inherit;
+    font-size: 4vh;
+}
+
+.textBox {}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+hr {
+    width: 30%;
+    border: 1px solid var(--gruv-aqua);
+    box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
+}
