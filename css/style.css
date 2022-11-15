@@ -36,13 +36,14 @@ body {
     font-weight: 400;
     font-size: 14px;
     color: var(--gruv-fg);
-    width: 60vh;
+    width: 60%;  /* Fix this latter for mobile (80% on mobile, 35% normal*/
     height: 60%;
     margin-top: 5vh;
     margin-bottom: 10vh;
     padding: 10px;
     background-color: var(--gruv-bg);
     border-radius: 20px;
+    backdrop-filter: hue-rotate(120deg) blur(4px);
 }
 
 .mainttext {
@@ -108,7 +109,7 @@ body {
 .sub-sub-title {
     color: var(--gruv-orange);
     font-family: Neon;
-    font-size: 2vh;
+    font-size: 150%;
     -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
     text-shadow: 0px 0px 10px var(--gruv-orange);
     animation: flicker 3s linear infinite;
@@ -132,6 +133,10 @@ body {
     font-size: 3.3vh;
     background-color: rgba(40, 36, 34, 1);
 }
+.nav-txt{
+
+}
+
 
 a {
     color: var(--gruv-fg);
@@ -143,7 +148,6 @@ a {
     -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
     text-shadow: 0px 0px 10px var(--gruv-orange);
     animation: flicker 10s linear infinite;
-
 }
 
 a:hover {
@@ -176,6 +180,12 @@ hr {
     width: 30%;
     border: 1px solid var(--gruv-aqua);
     box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
+}
+
+.sub-hr{
+    border-bottom: 1px solid var(--gruv-orange);
+    box-shadow: 0px 4px 2px -2px var(--gruv-orange);
+    width: fit-content;
 }
 
 .page-l {
