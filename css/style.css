@@ -189,7 +189,6 @@ hr {
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
 }
 
 /* Tooltip text */
@@ -197,7 +196,7 @@ hr {
     visibility: hidden;
     width: 10vh;
     text-align: center;
-    padding: 5px 0;
+    padding: 5px 5p;
     border-radius: 6px;
     top: 130%;
     left: 50%;
@@ -215,9 +214,6 @@ hr {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
-
-
-
 
 /* Sweet Flicker borrowed from https://codepen.io/mandymichael/pen/aJLYVz */
 
