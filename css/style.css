@@ -17,6 +17,7 @@ body {
     margin: auto;
     padding: 0;
     margin-top: 4%;
+    overflow: hidden; /* okay this is an issue that needs to be addressed. */
 }
 
 @font-face {
