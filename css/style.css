@@ -57,6 +57,10 @@ p {
     z-index: 2;
 }
 
+.pubkey{
+    width: inherit;
+}
+
 .switch {
     position: relative;
     display: inline-block;
