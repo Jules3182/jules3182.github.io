@@ -6,6 +6,7 @@ body {
     /* Stack elements vertically */
     min-height: 100vh;
     font-size: 20px;
+    overflow: hidden;
 }
 
 .terminal {
@@ -19,13 +20,13 @@ body {
 
 .entry{
     display: grid;
-    grid-template-columns:  14.5vh auto;
-    column-gap: 0vh;
-    width: 100%;
+    grid-template-columns:  auto auto;
+    column-gap: 10px;
     position: absolute;
     bottom: 0;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    background-color: black;
 }
 .input-field {
     background-color: black;
