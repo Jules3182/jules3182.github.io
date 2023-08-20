@@ -1,0 +1,79 @@
+body {
+    background-color: black;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    flex-direction: column;
+    /* Stack elements vertically */
+    min-height: 100vh;
+    font-size: 20px;
+}
+
+.terminal {
+    background-color: black;
+    color: green;
+
+    /* Allow the terminal area to expand to fill remaining space */
+    padding: 20px;
+
+}
+
+.entry{
+    display: grid;
+    grid-template-columns:  14.5vh auto;
+    column-gap: 0vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.input-field {
+    background-color: black;
+    color: green;
+    border: none;
+    padding-left: 0vh;
+}
+
+input:focus{
+    outline: none;
+}
+
+.user{
+    border: none;
+}
+
+.welcome-message {
+    background-color: black;
+    color: green;
+    padding: 20px;
+    border: 1px solid green;
+    white-space: pre-line;
+    /* Preserve line breaks and spaces */
+    font-family: 'Courier New', monospace;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: green;
+    opacity: 1;
+    /* Firefox */
+    font-family: 'Courier New', monospace;
+    text-align: left;
+    font-size: 15px;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: green;
+    font-family: 'Courier New', monospace;
+    text-align: left;
+    font-size: 15px;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: green;
+    font-family: 'Courier New', monospace;
+    text-align: left;
+    font-size: 15px;
+}
