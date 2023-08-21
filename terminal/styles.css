@@ -41,16 +41,25 @@ input:focus{
 
 .user{
     border: none;
+    color: chartreuse;
+}
+
+.halp{
+    color: aquamarine;
 }
 
 .welcome-message {
     background-color: black;
-    color: green;
+    color: chartreuse;
     padding: 20px;
     border: 1px solid green;
     white-space: pre-line;
     /* Preserve line breaks and spaces */
     font-family: 'Courier New', monospace;
+}
+
+strong{
+    color: chartreuse;
 }
 
 ::placeholder {

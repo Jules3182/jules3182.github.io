@@ -21,13 +21,26 @@ inputField.addEventListener('keydown', function (event) {
         }else if (command === 'heil_spez') {
             window.location.href = 'https://www.reddit.com/user/halfrican420';
 
-            // this is for me to quickly make more
+            // Brings up a card page with all of my social medias on it, mostly for social junk
+        }else if (command === 'social') {
+            //window.location.href = '';
+
+            // Yeahhh this is the help command.. if you're reading this deal with it because I have to aswell.
+        }else if (command === 'help') {
+            outputArea.innerHTML += '<p><strong>Oh, so you need help huh? very well.. I\'ll give in...</strong><br><br><strong class="halp">home or main</strong>: will bring you to the main landing page of my website<br><strong class="halp">social</strong>: Redirects to a page showing my various social media accounts to get in conntact with me <br> <strong class="halp">baked</strong>: Directly sends you to my art instagram <br><strong class="halp">heil_spez</strong>: Wanna see my reddit? Good luck.<br><strong class="halp">top_secret</strong>: Did you not read that?? It\'s <strong>TOP. SECRET.</strong> Understand?<br></p>';
+
+            // link to baked blend ig
         }else if (command === 'filler') {
             //window.location.href = '';
             // outputArea.innerHTML += `';
 
             // link to baked blend ig
-        } else if (command === 'baked') {
+        }else if (command === 'filler') {
+            //window.location.href = '';
+            // outputArea.innerHTML += `';
+
+            // link to baked blend ig
+        }else if (command === 'baked') {
             window.location.href = 'https://www.instagram.com/baked.blend/';
         } else {
     outputArea.innerHTML += `<p>Command not recognized: ${command}. Are you sure you typed that correctly?</p>`;
@@ -38,7 +51,7 @@ inputField.addEventListener('keydown', function (event) {
 
 document.addEventListener('DOMContentLoaded', function () {
     //  typing effect for the message
-    const welcomeMessage = "It seems you've stumbled apon my terminal.. Please, enter the command given below to continue on to the correct path... Good luck, it was a pleasure meeting you <3";
+    const welcomeMessage = "It seems you've stumbled apon my terminal.. Please, enter the command I gave you below to continue on to the correct path... Good luck, it was a pleasure meeting you <3\n\n If you need help enter the help command.. duh...";
     const welcomeMessageElement = document.querySelector('.welcome-message');
 
     function typeMessage(text, element) {
@@ -55,3 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     typeMessage(welcomeMessage, welcomeMessageElement);
 });
+
+//Auto select
+var input = document.getElementById('termIn');
+input.focus();
+input.select();
