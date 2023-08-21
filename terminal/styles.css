@@ -3,6 +3,7 @@
     --text-color: green;
     --accent-color: aquamarine;
     --title-color: chartreuse;
+    --heart: red;
 }
 
 /* Light mode colors */
@@ -11,6 +12,7 @@
     --text-color: #333;
     --accent-color: #007bff;
     --title-color: black;
+    --heart: pink;
 }
 
 /* Main body stuff */
@@ -23,7 +25,9 @@ body {
     background-color: var(--background-color);
 }
 
-
+.heart{
+    color: var(--heart);
+}
 
 /* wrapping div */
 .terminal {
@@ -98,9 +102,15 @@ strong {
     color: var(--title-color);
 }
 
+.tip{
+    font-weight: 100;
+    color: darkgreen;
+}
+
 .output {
     padding: 20px;
-    color: var(--title-color);
+    color: var(--text-color);
+    font-weight: 100;
 }
 
 /* style for the welcome message at the top */
