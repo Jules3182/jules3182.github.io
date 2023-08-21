@@ -43,7 +43,7 @@ inputField.addEventListener('keydown', function (event) {
 
             // Yeahhh this is the help command.. if you're reading this deal with it because I have to aswell. It's obviously super inifient.. but its MY website not yours lol. Code it yourself
         } else if (command === 'help') {
-            outputArea.innerHTML += '<p><strong>Oh, so you need help huh? very well.. I\'ll give in...</strong><br><br><strong class="halp">home or main</strong>: will bring you to the main landing page of my website<br><strong class="halp">social</strong>: Redirects to a page showing my various social media accounts to get in conntact with me <br> <strong class="halp">baked</strong>: Directly sends you to my art instagram <br><strong class="halp">heil_spez</strong>: Wanna see my reddit? Good luck.<br><strong class="halp">top_secret</strong>: Did you not read that?? It\'s <strong>TOP. SECRET.</strong> Understand?<br></p>';
+            outputArea.innerHTML += '<p><strong>Oh, so you need help huh? very well.. I\'ll give in...</strong><br><br><strong class="halp">home or main</strong>: will bring you to the main landing page of my website<br><strong class="halp">social</strong>: Redirects to a page showing my various social media accounts to get in conntact with me <br> <strong class="halp">baked</strong>: Directly sends you to my art instagram <br><strong class="halp">heil_spez</strong>: You really wanna see my reddit? Welp, good luck.<br><strong class="halp">top_secret</strong>: Did you not read that?? It\'s <strong>TOP. SECRET.</strong> Understand?<br></p>';
         } else {
             outputArea.innerHTML += `<p>Command not recognized: ${command}. Are you sure you typed that correctly?</p>`;
         }
@@ -53,7 +53,7 @@ inputField.addEventListener('keydown', function (event) {
 
 document.addEventListener('DOMContentLoaded', function () {
     //  typing effect for the message
-    const welcomeMessage = "It seems you've stumbled apon my terminal.. Please, enter the command I gave you below to continue on to the correct path... Good luck, it was a pleasure meeting you <3\n\n If you need help enter the help command.. duh...";
+    const welcomeMessage = "It seems you've stumbled apon my personal terminal.. Please, enter the command I gave you below to continue on to the correct path... Good luck, it was a pleasure meeting you <3";
     const welcomeMessageElement = document.querySelector('.welcome-message');
 
     function typeMessage(text, element) {

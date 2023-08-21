@@ -6,28 +6,28 @@ body {
     /* Stack elements vertically */
     min-height: 100vh;
     font-size: 20px;
-    overflow: hidden;
 }
 
 .terminal {
     background-color: black;
     color: green;
-
-    /* Allow the terminal area to expand to fill remaining space */
-    padding: 20px;
-
 }
 
 .entry{
     display: grid;
     grid-template-columns:  auto auto;
     column-gap: 10px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     background-color: black;
+    background-clip: padding-box;
+    padding-right: 100%;
+    box-shadow: 0px 5vh black;
+    padding-left: 20px;
 }
+
 .input-field {
     background-color: black;
     color: green;
@@ -48,12 +48,17 @@ input:focus{
     color: aquamarine;
 }
 
+.output{
+    padding: 20px;
+}
+
 .welcome-message {
     background-color: black;
     color: chartreuse;
     padding: 20px;
     border: 1px solid green;
     white-space: pre-line;
+    position: absolute;
     /* Preserve line breaks and spaces */
     font-family: 'Courier New', monospace;
 }
