@@ -4,6 +4,8 @@ const outputArea = document.querySelector('.output');
 const isDesktop = window.innerWidth > 768;
 // Allows for follow up information to be input
 let awaitingFollowUpInput = false;
+// Little toggle to change up the dialog
+let lightMode = false;
 
 // This code handles all of the input field stuff
 inputField.addEventListener('keydown', function (event) {
@@ -19,8 +21,9 @@ inputField.addEventListener('keydown', function (event) {
 
         // Follow up input for setting new username
         if (awaitingFollowUpInput) {
+            // Some fun junk
             // Checks all cases to make sure its valid
-            if (command.length <= 5 && command.length > 0 && command !== 'exit') {
+            if (command.length <= 5 && command.length > 0 && command !== 'exit' && command !== 'baker') {
                 // Changes user to given name and removes spaces
                 document.getElementById("username").innerHTML = command.replace(' ', '');
                 // Announces in console that it worked
@@ -34,6 +37,18 @@ inputField.addEventListener('keydown', function (event) {
                 outputArea.innerHTML += '<p>Action canceled. Username not changed.</p>';
                 // Returns to main state
                 awaitingFollowUpInput = false;
+
+            } else if (command === 'baker') {
+                // lol
+                outputArea.innerHTML += '<p>My leige, welcome back. Allow me to get things right for you.</p>';
+                document.getElementById("username").innerHTML = 'Baker';
+                // Returns to main state
+                awaitingFollowUpInput = false;
+                if (lightMode) {
+                    const terminalWindow = document.querySelector('.terminal-window');
+                    terminalWindow.classList.toggle('light-mode');
+                    lightMode = false;
+                }
 
             } else {
                 // If case check fails and it wasn't an exit command prints out a warning to let the user know to type a different username or exit the prompt
@@ -77,17 +92,28 @@ inputField.addEventListener('keydown', function (event) {
 
                 // Toggle for light mode
             } else if (command === 'light_mode') {
-                outputArea.innerHTML = '';
+                // Checks to see whats active to give a proper snarky response
+                if (!lightMode) {
+                    outputArea.innerHTML += '<p>You disgust me... Very well, it\'s your eyes not mine. (type it again to toggle it off)</p>';
+                } else {
+                    outputArea.innerHTML += '<p>My god its about time, thank you. Truly.</p>';
+                }
+                // Targets the class terminal-window
+                const terminalWindow = document.querySelector('.terminal-window');
+                // Toggles the light-mode class
+                terminalWindow.classList.toggle('light-mode');
+                // Flip flops the bool to keep track of the currrent mode
+                lightMode = !lightMode;
 
 
-            } else if (command === 'clear') {
-                outputArea.innerHTML = '';
 
+            } else if (command === 'filler') {
+                //outputArea.innerHTML = '';
+                //window.location.href = 'filer.html';
 
-            } else if (command === 'clear') {
-                outputArea.innerHTML = '';
-
-
+            } else if (command === 'filler') {
+                //outputArea.innerHTML = '';
+                //window.location.href = 'filer.html';
 
                 // This is for me to be bale to copyy and quicly make new commands
             } else if (command === 'filler') {
@@ -97,7 +123,7 @@ inputField.addEventListener('keydown', function (event) {
 
                 // Yeahhh this is the help command.. if you're reading this deal with it because I have to aswell. It's obviously super inifient.. but its MY website not yours lol. Code it yourself
             } else if (command === 'help') {
-                outputArea.innerHTML += '<p><strong>Oh, so you need help huh? very well.. I\'ll give in...</strong><br><br><strong class="halp">home or main</strong>: will bring you to the main landing page of my website<br><strong class="halp">social</strong>: Redirects to a page showing my various social media accounts to get in conntact with me <br> <strong class="halp">baked</strong>: Directly sends you to my art instagram <br><strong class="halp">heil_spez</strong>: You really wanna see my reddit? Welp, good luck.<br><strong class="halp">top_secret</strong>: Did you not read that?? It\'s <strong>TOP. SECRET.</strong> Understand?<br><strong class="halp">h4ck3r_m0d3</strong>: This redirects you to my github page<br><strong class="halp">set_user</strong>: Prompts you to change the username of who is logged in<br><strong class="halp">clear</strong>: Clears the console<br></p>';
+                outputArea.innerHTML += '<p><strong>Oh, so you need help huh? very well.. I\'ll give in...</strong><br><br><strong class="halp">home</strong>: will bring you to the main landing page of my website<br><strong class="halp">main</strong>: Same as home<br><strong class="halp">social</strong>: Redirects to a page showing my various social media accounts to get in conntact with me <br> <strong class="halp">baked</strong>: Directly sends you to my art instagram <br><strong class="halp">heil_spez</strong>: You really wanna see my reddit? Welp, good luck.<br><strong class="halp">top_secret</strong>: Did you not read that?? It\'s <strong>TOP. SECRET.</strong> Understand?<br><strong class="halp">h4ck3r_m0d3</strong>: This redirects you to my github page<br><strong class="halp">set_user</strong>: Prompts you to change the username of who is logged in<br><strong class="halp">clear</strong>: Clears the console<br><strong class="halp">light_mode</strong>: Toggles between light and dark mode in the console<br></p>';
             } else {
                 outputArea.innerHTML += `<p>Command not recognized: ${command}. Are you sure you typed that correctly?</p>`;
             }

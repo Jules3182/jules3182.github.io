@@ -1,17 +1,33 @@
+:root {
+    --background-color: black;
+    --text-color: green;
+    --accent-color: aquamarine;
+    --title-color: chartreuse;
+}
+
+/* Light mode colors */
+.light-mode {
+    --background-color: #e6e6e6;
+    --text-color: #333;
+    --accent-color: #007bff;
+    --title-color: black;
+}
+
 /* Main body stuff */
 body {
-    background-color: black;
     margin: 0;
     font-family: 'Courier New', monospace;
     flex-direction: column;
     min-height: 100vh;
     font-size: 20px;
+    background-color: var(--background-color);
 }
+
+
 
 /* wrapping div */
 .terminal {
-    background-color: black;
-    color: green;
+    color: var(--text-color);
 }
 
 /* Entry part stuck to the bottom, this is where you enter the commands */
@@ -23,16 +39,16 @@ body {
     bottom: 0;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    background-color: black;
+    background-color: var(--background-color);
     background-clip: padding-box;
     padding-right: 100%;
-    box-shadow: 0px 5vh black;
+    box-shadow: 0px 5vh var(--background-color);
     padding-left: 20px;
 }
 
 .input-field {
-    background-color: black;
-    color: green;
+    background-color: var(--background-color);
+    color: var(--text-color);
     border: none;
     padding-left: 0vh;
 }
@@ -40,7 +56,7 @@ body {
 /* Styling done on the paceholder text and user input */
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: green;
+    color: var(--text-color);
     opacity: 1;
     /* Firefox */
     font-family: 'Courier New', monospace;
@@ -50,7 +66,7 @@ body {
 
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: green;
+    color: var(--text-color);
     font-family: 'Courier New', monospace;
     text-align: left;
     font-size: 15px;
@@ -58,7 +74,7 @@ body {
 
 ::-ms-input-placeholder {
     /* Microsoft Edge */
-    color: green;
+    color: var(--text-color);
     font-family: 'Courier New', monospace;
     text-align: left;
     font-size: 15px;
@@ -70,31 +86,31 @@ input:focus {
 
 .user {
     border: none;
-    color: chartreuse;
+    color: var(--title-color);
 }
 
 /* bit of some flavor for the help command, will likely be used elsewhere */
 .halp {
-    color: aquamarine;
+    color: var(--accent-color);
 }
 
 strong {
-    color: chartreuse;
+    color: var(--title-color);
 }
 
 .output {
     padding: 20px;
+    color: var(--title-color);
 }
 
 /* style for the welcome message at the top */
 .welcome-message {
-    background-color: black;
-    color: chartreuse;
+    background-color: var(--background-color);
+    color: var(--title-color);
     padding: 20px;
-    border: 1px solid green;
+    border: 1px solid var(--text-color);
     white-space: pre-line;
     position: absolute;
     /* Preserve line breaks and spaces */
     font-family: 'Courier New', monospace;
 }
-
