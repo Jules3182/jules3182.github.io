@@ -24,7 +24,9 @@ const escapeMap = {
 };
 // tracks type message activity
 let isTyping = false;
-
+//Implementing command history like a normal terminal
+let commandHistory = [];
+let historyIndex = -1;
 
 document.addEventListener('DOMContentLoaded', function () {
     //  typing effect for the message
@@ -83,7 +85,26 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             return;
         }
-        if (event.key === 'Enter') {
+
+        // Code handling the arrow navigation
+        if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+            event.preventDefault();
+
+            if (commandHistory.length > 0) {
+                if (event.key === 'ArrowUp' && historyIndex < commandHistory.length - 1) {
+                    historyIndex++;
+                } else if (event.key === 'ArrowDown' && historyIndex > -1) {
+                    historyIndex--;
+                }
+
+                if (historyIndex > -1) {
+                    inputField.value = commandHistory[historyIndex];
+                } else {
+                    inputField.value = '';
+                }
+            }
+
+        } else if (event.key === 'Enter') {
             // Automatically jumps to the bottom on enter
             window.scrollTo(0, document.body.scrollHeight);
             // Checks if it's a mobile device and will deselct the input after so the keyboard goes away
@@ -93,6 +114,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             event.preventDefault();
             const command = inputField.value.toLowerCase().trim();
+
+            //If the command isn't empty it will save the last sent one to an array
+            if (command !== '') {
+                commandHistory.unshift(command);
+                historyIndex = -1; // Resets history index
+            }
+
             inputField.value = '';
 
             // Handles different commands and redirects
