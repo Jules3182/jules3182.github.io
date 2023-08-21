@@ -21,7 +21,8 @@ const escapeMap = {
     '\\f': '</em>',
     '\\n': '<br><br>'
 };
-
+// tracks type message activity
+let isTyping = false;
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const welcomeMessageElement = document.querySelector('.welcome-message');
 
     function typeMessage(text, element) {
+        isTyping = true;
         let i = 0;
         let currentEscape = '';
         let tagContent = '';
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (i < text.length) {
                 const char = text.charAt(i);
 
-               if (char === '\\' && !isEscaping) {
+                if (char === '\\' && !isEscaping) {
                     isEscaping = true;
                     currentEscape = char;
                 } else if (isEscaping) {
@@ -56,14 +58,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 element.innerHTML = tagContent;
 
                 i++;
+
             } else {
-                clearInterval(typingInterval);
-                if (delay > 0) {
-                    setTimeout(function () {
-                        element.innerHTML = ''; // Clear output area
-                        typeMessage(outputText, element); // Display subsequent output
-                    }, delay);
-                }
+                isTyping = false;
             }
         }, typeSpeed); // Typing Speed
     }
@@ -80,9 +77,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // This code handles all of the input field stuff
     inputField.addEventListener('keydown', function (event) {
+        // makes sure the typeMessage function has stopped
+        if (isTyping) {
+            event.preventDefault();
+            return;
+        }
         if (event.key === 'Enter') {
             // Automatically jumps to the bottom on enter
             window.scrollTo(0, document.body.scrollHeight);
+            // Checks if it's a mobile device and will deselct the input after so the keyboard goes away
+            if (!isDesktop) {
+                this.blur();
+            }
 
             event.preventDefault();
             const command = inputField.value.toLowerCase().trim();
