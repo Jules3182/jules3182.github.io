@@ -8,6 +8,9 @@ let awaitingFollowUpInput = false;
 // This code handles all of the input field stuff
 inputField.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
+        // Automatically jumps to the bottom on enter
+        window.scrollTo(0, document.body.scrollHeight);
+
         event.preventDefault();
         const command = inputField.value.toLowerCase().trim();
         inputField.value = '';
@@ -16,14 +19,24 @@ inputField.addEventListener('keydown', function (event) {
 
         // Follow up input for setting new username
         if (awaitingFollowUpInput) {
+            // Checks all cases to make sure its valid
             if (command.length <= 5 && command.length > 0 && command !== 'exit') {
-                document.getElementById("username").innerHTML = command;
+                // Changes user to given name and removes spaces
+                document.getElementById("username").innerHTML = command.replace(' ', '');
+                // Announces in console that it worked
                 outputArea.innerHTML += '<p>Your username is now set to <strong class="halp">' + command + '</strong>!</p>';
+                // Returns to main state
                 awaitingFollowUpInput = false;
+
+                // Exit command to leave without changing
             } else if (command === 'exit') {
-                outputArea.innerHTML += '<p>Action canceled.</p>';
+                // Announces this to make it clear
+                outputArea.innerHTML += '<p>Action canceled. Username not changed.</p>';
+                // Returns to main state
                 awaitingFollowUpInput = false;
+
             } else {
+                // If case check fails and it wasn't an exit command prints out a warning to let the user know to type a different username or exit the prompt
                 outputArea.innerHTML += '<p>The username you\'ve entered is invalid. Please enter a username under 5 characters long or type <strong>EXIT</strong> to cancel this opporation.</p>';
             }
         } else {
@@ -44,7 +57,6 @@ inputField.addEventListener('keydown', function (event) {
             } else if (command === 'social') {
                 //window.location.href = '';
 
-
                 // Redirects to github page
             } else if (command === 'h4ck3r_m0d3') {
                 window.location.href = 'https://github.com/Jules3182';
@@ -55,12 +67,33 @@ inputField.addEventListener('keydown', function (event) {
                 // Sends to follow up input section
                 awaitingFollowUpInput = true;
 
-            } else if (command === 'clear') {
-                outputArea.innerHTML = '';
-
                 // link to baked blend ig
             } else if (command === 'baked') {
                 window.location.href = 'https://www.instagram.com/baked.blend/';
+
+                // Simple clear console command
+            } else if (command === 'clear') {
+                outputArea.innerHTML = '';
+
+                // Toggle for light mode
+            } else if (command === 'light_mode') {
+                outputArea.innerHTML = '';
+
+
+            } else if (command === 'clear') {
+                outputArea.innerHTML = '';
+
+
+            } else if (command === 'clear') {
+                outputArea.innerHTML = '';
+
+
+
+                // This is for me to be bale to copyy and quicly make new commands
+            } else if (command === 'filler') {
+                //outputArea.innerHTML = '';
+                //window.location.href = 'filer.html';
+
 
                 // Yeahhh this is the help command.. if you're reading this deal with it because I have to aswell. It's obviously super inifient.. but its MY website not yours lol. Code it yourself
             } else if (command === 'help') {
