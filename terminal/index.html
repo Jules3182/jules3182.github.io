@@ -16,21 +16,30 @@ If you happen to see this then good on you! You're probably pretty dope (or just
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Terminal Page</title>
 </head>
 
 <body>
+    <!-- main element, really this is all of it -->
     <div class="terminal">
-        <stong><div class="welcome-message"></div></stong>
+        <stong>
+            <!-- cute lil welcome message that will autoscroll type -->
+            <div class="welcome-message"></div>
+        </stong>
         <br><br><br><br><br><br><br>
+        <!-- this area will contain any output style text into the terminal -->
         <div class="output"></div>
+        <!-- this div section contains the fake user bit as well as the actual entry section -->
         <div class="entry">
-            <p class="user ">C:\Users\Guest></p>
-            <input class="input-field" id="termIn" type="text" placeholder="Enter command here">
+            <!-- aforementioned fake user -->
+            <p class="user">C:\Users\Guest></p>
+            <!-- as well as input field -->
+            <input class="input-field" id="termIn" type="text" placeholder="Enter cmd here">
         </div>
     </div>
+    <!-- script to make this actualy work -->
     <script src="script.js"></script>
-
 </body>
 
 </html>

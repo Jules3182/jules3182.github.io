@@ -1,21 +1,23 @@
+/* Main body stuff */
 body {
     background-color: black;
     margin: 0;
     font-family: 'Courier New', monospace;
     flex-direction: column;
-    /* Stack elements vertically */
     min-height: 100vh;
     font-size: 20px;
 }
 
+/* wrapping div */
 .terminal {
     background-color: black;
     color: green;
 }
 
-.entry{
+/* Entry part stuck to the bottom, this is where you enter the commands */
+.entry {
     display: grid;
-    grid-template-columns:  auto auto;
+    grid-template-columns: auto auto;
     column-gap: 10px;
     position: fixed;
     bottom: 0;
@@ -35,38 +37,7 @@ body {
     padding-left: 0vh;
 }
 
-input:focus{
-    outline: none;
-}
-
-.user{
-    border: none;
-    color: chartreuse;
-}
-
-.halp{
-    color: aquamarine;
-}
-
-.output{
-    padding: 20px;
-}
-
-.welcome-message {
-    background-color: black;
-    color: chartreuse;
-    padding: 20px;
-    border: 1px solid green;
-    white-space: pre-line;
-    position: absolute;
-    /* Preserve line breaks and spaces */
-    font-family: 'Courier New', monospace;
-}
-
-strong{
-    color: chartreuse;
-}
-
+/* Styling done on the paceholder text and user input */
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: green;
@@ -92,3 +63,38 @@ strong{
     text-align: left;
     font-size: 15px;
 }
+
+input:focus {
+    outline: none;
+}
+
+.user {
+    border: none;
+    color: chartreuse;
+}
+
+/* bit of some flavor for the help command, will likely be used elsewhere */
+.halp {
+    color: aquamarine;
+}
+
+strong {
+    color: chartreuse;
+}
+
+.output {
+    padding: 20px;
+}
+
+/* style for the welcome message at the top */
+.welcome-message {
+    background-color: black;
+    color: chartreuse;
+    padding: 20px;
+    border: 1px solid green;
+    white-space: pre-line;
+    position: absolute;
+    /* Preserve line breaks and spaces */
+    font-family: 'Courier New', monospace;
+}
+

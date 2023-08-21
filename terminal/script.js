@@ -1,14 +1,16 @@
 const inputField = document.querySelector('.input-field');
 const outputArea = document.querySelector('.output');
+//simple way to check if it is desktop or mobile
 const isDesktop = window.innerWidth > 768;
 
+// This code handles all of the input field stuff
 inputField.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
         const command = inputField.value.toLowerCase().trim();
         inputField.value = '';
 
-        // Handle different commands and redirects
+        // Handles different commands and redirects
 
         // link back to main website page
         if (command === 'home' || command === 'main') {
@@ -27,10 +29,9 @@ inputField.addEventListener('keydown', function (event) {
             //window.location.href = '';
 
 
-            // link to baked blend ig
-        } else if (command === 'filler') {
+            // Redirects to github page
+        } else if (command === 'h4ck3r_m0d3') {
             //window.location.href = '';
-            // outputArea.innerHTML += `';
 
             // link to baked blend ig
         } else if (command === 'filler') {
@@ -71,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     typeMessage(welcomeMessage, welcomeMessageElement);
 });
 
+// Quick little add on snip that will automatically place the cursor in the input if on desktop
 if (isDesktop) {
     var input = document.getElementById('termIn');
     input.focus();
