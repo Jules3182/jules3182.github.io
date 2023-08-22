@@ -1,5 +1,6 @@
 const inputField = document.querySelector('.input-field');
 const outputArea = document.querySelector('.output');
+const welcomeArea = document.querySelector('.welcome-message');
 // simple way to check if it is desktop or mobile
 const isDesktop = window.innerWidth > 768;
 // Allows for follow up information to be input
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 if (scroll) {
                     window.scrollTo(0, document.body.scrollHeight);
+                    welcomeArea.style.display = "none";
                 }
 
                 element.innerHTML = tagContent;
@@ -73,6 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }, typeSpeed); // Typing Speed
     }
 
+    // "Start up" sequence
+    window.scrollTo(0, 0);
     typeMessage(welcomeMessage, welcomeMessageElement);
 
     // Quick little add on snip that will automatically place the cursor in the input if on desktop
@@ -260,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Shows the code from this website
                 } else if (command === 'show_code') {
-                    outputArea.innerHTML = 'https://github.com/Jules3182/jules3182.github.io/tree/master/terminal';
+                    window.location.href = 'https://github.com/Jules3182/jules3182.github.io/tree/master/terminal';
 
                     // Brings you to the hexenring home page
                 } else if (command === 'hxn') {
@@ -275,6 +279,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     //outputArea.innerHTML = '';
                     //window.location.href = 'filer.html';
 
+
+                } else if (command === 'witchhouse') {
+                    window.location.href = 'https://www.instagram.com/witchhousetattoo/?hl=en';
+
+
+                    // Shows welcome message again
+                } else if (command === 'welcome') {
+                    welcomeArea.style.display = "block";
+                    window.scrollTo(0, 0);
+                    outputArea.innerHTML = '';
+
+
                 } else if (command === 'filler') {
                     //outputArea.innerHTML = '';
                     //window.location.href = 'filer.html';
@@ -283,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Yeahhh this is the help command.. if you're reading this deal with it because I have to aswell. It's obviously super inifient.. but its MY website not yours lol. Code it yourself
                 } else if (command === 'help') {
                     typeSpeed = 10;
-                    typeMessage("\\b Oh, so you need help huh? very well.. I\'ll give in... \\e \\n \\i home\\e or \\i main\\e: will bring you to the main landing page of my website\\n\\isocial\\e: Reads off my various social media accounts to get in contact with me \\n \\iHXN\\e: Brings you to the Hexenring Media home page\\n\\ibaked\\e: Directly sends you to my art instagram \\n\\iheil_spez\\e: You really wanna see my reddit? Welp, good luck.\\n\\itop_secret\\e: Did you not read that?? It\'s \\bTOP. SECRET.\\e Understand?\\n\\ih4ck3r_m0d3\\e: This redirects you to my github page\\n\\i set_user\\e: Prompts you to change the username of who is logged in\\n\\iclear\\e: Clears the console\\n\\ilight_mode\\e: Toggles between light and dark mode in the console\\n\\i donate\\e: Buy me a coffee?? That would be so dope\\n \\iset_speed\\e: Allows you to adjust the typing speed\\n\\i specs\\e: Shows the specs of my current PC build\\n\\iresources\\e: Lists off some of my favorite resources I use all the time \\n\\i show_code\\e: Brings you to the code base of this page\\n\\i help\\e: homie... this is help you know what it does\\n", outputArea);
+                    typeMessage("\\b Oh, so you need help huh? very well.. I\'ll give in... \\e \\n \\i home\\e or \\i main\\e: will bring you to the main landing page of my website\\n\\isocial\\e: Reads off my various social media accounts to get in contact with me \\n \\iHXN\\e: Brings you to the Hexenring Media home page\\n\\ibaked\\e: Directly sends you to my art instagram \\n\\i witchhouse\\e: check out the shop I got this sick tattoo at!\\n\\iheil_spez\\e: You really wanna see my reddit? Welp, good luck.\\n\\itop_secret\\e: Did you not read that?? It\'s \\bTOP. SECRET.\\e Understand?\\n\\ih4ck3r_m0d3\\e: This redirects you to my github page\\n\\i set_user\\e: Prompts you to change the username of who is logged in\\n\\iclear\\e: Clears the console\\n\\ilight_mode\\e: Toggles between light and dark mode in the console\\n\\i donate\\e: Buy me a coffee?? That would be so dope\\n \\iset_speed\\e: Allows you to adjust the typing speed\\n\\i specs\\e: Shows the specs of my current PC build\\n\\iresources\\e: Lists off some of my favorite resources I use all the time \\n\\i show_code\\e: Brings you to the code base of this page\\n\\i welcome\\e: Brings up the welcome message again\\n\\i help\\e: homie... this is help you know what it does\\n", outputArea);
                     typeSpeed = 40;
                     //     \\i COMMAND\\e: DESCRIPTION\\n
 
