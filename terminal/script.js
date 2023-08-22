@@ -13,6 +13,8 @@ let typeSpeed = 40;
 // Janky way to handle follow up types
 let FUname = false;
 let FUspeed = false;
+// Welcome message scroll hot fix
+let scroll = false;
 // Custom escape map
 const escapeMap = {
     '\\b': '<strong>',
@@ -57,8 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     tagContent += char;
                 }
+                if (scroll) {
+                    element.innerHTML = tagContent;
+                }
 
-                element.innerHTML = tagContent;
                 window.scrollTo(0, document.body.scrollHeight);
                 i++;
 
@@ -69,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     typeMessage(welcomeMessage, welcomeMessageElement);
-
+    scroll = true;
 
     // Quick little add on snip that will automatically place the cursor in the input if on desktop
     if (isDesktop) {
