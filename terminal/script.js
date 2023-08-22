@@ -60,20 +60,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     tagContent += char;
                 }
                 if (scroll) {
-                    element.innerHTML = tagContent;
+                    window.scrollTo(0, document.body.scrollHeight);
                 }
 
-                window.scrollTo(0, document.body.scrollHeight);
+                element.innerHTML = tagContent;
                 i++;
 
             } else {
                 isTyping = false;
+                scroll = true;
             }
         }, typeSpeed); // Typing Speed
     }
 
     typeMessage(welcomeMessage, welcomeMessageElement);
-    scroll = true;
 
     // Quick little add on snip that will automatically place the cursor in the input if on desktop
     if (isDesktop) {
