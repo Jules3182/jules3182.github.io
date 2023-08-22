@@ -16,7 +16,7 @@ let FUname = false;
 let FUspeed = false;
 // Welcome message scroll hot fix
 let scroll = false;
-// Custom escape map
+// Custom escape map for use in the typeMessage function
 const escapeMap = {
     '\\b': '<strong>',
     '\\e': '</strong>',
@@ -30,12 +30,35 @@ let isTyping = false;
 //Implementing command history like a normal terminal
 let commandHistory = [];
 let historyIndex = -1;
+// Array of all possible comands to use for autocomplete
+const availableCommands = ['home', 'main', 'social', 'hxn', 'baked', 'witchhouse', 'heil_spez', 'top_secret', 'h4ck3r_m0d3', 'set_user', 'clear', 'light_mode', 'donate', 'set_speed', 'specs', 'resources', 'show_code', 'welcome', 'help'];
+//  Welcome message vars
+const welcomeMessage = "\\bIt seems you've stumbled apon my personal terminal.. Please, enter the command I gave you below to continue on to the correct path... Good luck, it was a pleasure meeting you \\e\\h<3\\e \\n \\f(Feel free to use the help command to see all of your options!)\\e";
+const welcomeMessageElement = document.querySelector('.welcome-message');
+
+
+// MAIN JS
 
 document.addEventListener('DOMContentLoaded', function () {
-    //  typing effect for the message
-    const welcomeMessage = "\\bIt seems you've stumbled apon my personal terminal.. Please, enter the command I gave you below to continue on to the correct path... Good luck, it was a pleasure meeting you \\e\\h<3\\e \\n \\f(Feel free to use the help command to see all of your options!)\\e";
-    const welcomeMessageElement = document.querySelector('.welcome-message');
 
+
+    // "Start up" sequence
+
+    window.scrollTo(0, 0);
+    typeMessage(welcomeMessage, welcomeMessageElement);
+    // Quick little add on snip that will automatically place the cursor in the input if on desktop
+    if (isDesktop) {
+        var input = document.getElementById('termIn');
+        input.focus();
+        input.select();
+    } else {
+        outputArea.classList.add('mobile');
+    }
+
+
+    // FUNCTIONS
+
+    // Type message func for typing out messages letter by letter for effect
     function typeMessage(text, element) {
         isTyping = true;
         let i = 0;
@@ -75,18 +98,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }, typeSpeed); // Typing Speed
     }
 
-    // "Start up" sequence
-    window.scrollTo(0, 0);
-    typeMessage(welcomeMessage, welcomeMessageElement);
+    // autocomplete command to allow for users to hit tab to complete
+    function autocompleteCommand() {
+        const currentInput = inputField.value.toLowerCase().trim();
+        const matchingCommands = availableCommands.filter(command => command.startsWith(currentInput));
 
-    // Quick little add on snip that will automatically place the cursor in the input if on desktop
-    if (isDesktop) {
-        var input = document.getElementById('termIn');
-        input.focus();
-        input.select();
+        if (matchingCommands.length === 1) {
+            inputField.value = matchingCommands[0]; // Auto-complete single match
+        } else if (matchingCommands.length > 1) {
+            // Cycle through matching commands with each tab press
+            if (historyIndex === -1) {
+                historyIndex = 0;
+            } else {
+                historyIndex = (historyIndex + 1) % matchingCommands.length;
+            }
+            inputField.value = matchingCommands[historyIndex];
+        }
     }
 
-    // This code handles all of the input field stuff
+
+
+    // Main command handler!
     inputField.addEventListener('keydown', function (event) {
         // makes sure the typeMessage function has stopped
         if (isTyping) {
@@ -112,12 +144,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
+        // Code handling the tab autocomplete functionality
+        } else if (event.key === 'Tab') {
+            event.preventDefault();
+            autocompleteCommand();
+
+        // Code handling the main command entry
         } else if (event.key === 'Enter') {
             // Automatically jumps to the bottom on enter
             window.scrollTo(0, document.body.scrollHeight);
             // Checks if it's a mobile device and will deselct the input after so the keyboard goes away
             if (!isDesktop) {
-                this.blur();
+                this.blur();  // which absolute nerd decided that the function to unfocus should be called blur lmao
             }
 
             event.preventDefault();
