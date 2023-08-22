@@ -252,19 +252,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Displays my current PC specs
                 } else if (command === 'specs') {
-                    //outputArea.innerHTML = '';
-                    //window.location.href = 'filer.html';
+                    typeMessage("\\b Ah yes, the good stuff\\e \\n \\i CPU\\e: Ryzen 9 5950x\\n\\iGPU\\e: 4070 fe\\n\\iRAM\\e: 64  GB ddr4 3600 \\n \\iMoBo\\e: Strix x570i\\n\\iCase\\e: Custom Node 202\\n \\iStorage\\e: 2x 1tb Sabrent NVMe Drives\\n\\iCooler\\e: NZXT Kraken x63\\n\\iPSU\\e: Corsair FS750\\n", outputArea);
 
                     // Shows the code from this website
                 } else if (command === 'show_code') {
                     outputArea.innerHTML = 'https://github.com/Jules3182/jules3182.github.io/tree/master/terminal';
 
-                    // This is for me to be bale to copyy and quicly make new commands
-                } else if (command === 'filler') {
+                    // Brings you to the hexenring home page
+                } else if (command === 'hxn') {
+                    //window.location.href = 'filer.html';
+
+                    // This is for me to be able to copyy and quicly make new commands
+                } else if (command === 'donate') {
                     //outputArea.innerHTML = '';
                     //window.location.href = 'filer.html';
 
-                    // This is for me to be bale to copyy and quicly make new commands
+                } else if (command === 'resources') {
+                    //outputArea.innerHTML = '';
+                    //window.location.href = 'filer.html';
+
                 } else if (command === 'filler') {
                     //outputArea.innerHTML = '';
                     //window.location.href = 'filer.html';
@@ -273,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Yeahhh this is the help command.. if you're reading this deal with it because I have to aswell. It's obviously super inifient.. but its MY website not yours lol. Code it yourself
                 } else if (command === 'help') {
                     typeSpeed = 10;
-                    typeMessage("\\b Oh, so you need help huh? very well.. I\'ll give in... \\e \\n \\i home\\e or \\i main\\e: will bring you to the main landing page of my website\\n\\isocial\\e: Reads off my various social media accounts to get in contact with me \\n \\ibaked\\e: Directly sends you to my art instagram \\n\\iheil_spez\\e: You really wanna see my reddit? Welp, good luck.\\n\\itop_secret\\e: Did you not read that?? It\'s \\bTOP. SECRET.\\e Understand?\\n\\ih4ck3r_m0d3\\e: This redirects you to my github page\\n\\i set_user\\e: Prompts you to change the username of who is logged in\\n\\iclear\\e: Clears the console\\n\\ilight_mode\\e: Toggles between light and dark mode in the console\\n \\iset_speed\\e: Allows you to adjust the typing speed\\n\\i specs\\e: Shows the specs of my current PC build\\n\\i show_code\\e: Brings you to the code base of this page\\n\\i help\\e: homie... this is help you know what it does\\n", outputArea);
+                    typeMessage("\\b Oh, so you need help huh? very well.. I\'ll give in... \\e \\n \\i home\\e or \\i main\\e: will bring you to the main landing page of my website\\n\\isocial\\e: Reads off my various social media accounts to get in contact with me \\n \\iHXN\\e: Brings you to the Hexenring Media home page\\n\\ibaked\\e: Directly sends you to my art instagram \\n\\iheil_spez\\e: You really wanna see my reddit? Welp, good luck.\\n\\itop_secret\\e: Did you not read that?? It\'s \\bTOP. SECRET.\\e Understand?\\n\\ih4ck3r_m0d3\\e: This redirects you to my github page\\n\\i set_user\\e: Prompts you to change the username of who is logged in\\n\\iclear\\e: Clears the console\\n\\ilight_mode\\e: Toggles between light and dark mode in the console\\n\\i donate\\e: Buy me a coffee?? That would be so dope\\n \\iset_speed\\e: Allows you to adjust the typing speed\\n\\i specs\\e: Shows the specs of my current PC build\\n\\iresources\\e: Lists off some of my favorite resources I use all the time \\n\\i show_code\\e: Brings you to the code base of this page\\n\\i help\\e: homie... this is help you know what it does\\n", outputArea);
                     typeSpeed = 40;
                     //     \\i COMMAND\\e: DESCRIPTION\\n
 
