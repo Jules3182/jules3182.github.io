@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Brings you to the Caffienated Coder Redbubble
                 } else if (command === 'cc') {
-                    window.location.href = 'https://www.redbubble.com/people/halfrican420/shop';
+                    window.location.href = 'https://www.redbubble.com/people/halfrican420/shop?asc=u&ref=account-nav-dropdown';
 
                     // This is for me to be able to copyy and quicly make new commands
                 } else if (command === 'donate') {
