@@ -11,6 +11,7 @@ let lightMode = false;
 let tagOpened = false;
 // Toggle typing speed
 let typeSpeed = 40;
+let userSpeed = 40; // this is for times I need to change it manually to type faster or something
 // Janky way to handle follow up types
 let FUname = false;
 let FUspeed = false;
@@ -35,6 +36,7 @@ const availableCommands = ['home', 'main', 'social', 'hxn', 'baked', 'witchhouse
 //  Welcome message vars
 const welcomeMessage = "\\bIt seems you've stumbled apon my personal terminal.. Please, enter the command I gave you below to continue on to the correct path... Good luck, it was a pleasure meeting you \\e\\h<3\\e \\n \\f(Feel free to use the help command to see all of your options!)\\e";
 const welcomeMessageElement = document.querySelector('.welcome-message');
+
 
 
 // MAIN JS
@@ -213,17 +215,20 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (awaitingFollowUpInput && FUspeed) {
 
                 if (command === 'slow') {
-                    typeSpeed = 100;
+                    userSpeed = 100;
+                    typeSpeed = userSpeed;
                     awaitingFollowUpInput = false;
                     FUspeed = false;
                     typeMessage("Type speed has been set to \\islow.\\e\\n", outputArea);
                 } else if (command === 'medium') {
-                    typeSpeed = 40;
+                    userSpeed = 40;
+                    typeSpeed = userSpeed;
                     awaitingFollowUpInput = false;
                     FUspeed = false;
                     typeMessage("Type speed has been set to \\imedium.\\e\\n", outputArea);
                 } else if (command === 'fast') {
-                    typeSpeed = 20;
+                    userSpeed = 20;
+                    typeSpeed = userSpeed;
                     awaitingFollowUpInput = false;
                     FUspeed = false;
                     typeMessage("Type speed has been set to \\ifast.\\e\\n", outputArea);
@@ -252,6 +257,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Brings up a card page with all of my social medias on it, mostly for social junk
                 } else if (command === 'social') {
                     typeMessage("\\b So you wanna get in contact then?\\e \\n \\i Instagram\\e: baked.blend\\n\\iSnapchat\\e: jb4339\\n\\iDiscord\\e: Halfrican420 \\n \\iSteam\\e: Halfrican420\\n \\iGithub\\e: Jules3182\\n", outputArea);
+
+                    // Brings up a card page with all of my social medias on it, mostly for social junk
+                } else if (command === 'contact') {
+                    typeMessage("\\b It was a pleasure meeting you. Here are some easy ways to get in contact with me:\\e \\n \\i Phone Number\\e: (860) 977-8060 \\n\\i Email\\e: baker.julian404@gmail.com \\n \\i Linkedin\\e: Enter code \\b linked\\e to be redirected to my Linkedin page \\n\\iGithub\\e: Jules3182\\n", outputArea);
 
                     // Redirects to github page
                 } else if (command === 'h4ck3r_m0d3') {
@@ -317,6 +326,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     //outputArea.innerHTML = '';
                     //window.location.href = 'filer.html';
 
+                    // This is for me to be able to copyy and quicly make new commands
+                } else if (command === 'linked') {
+                    window.location.href = 'https://www.linkedin.com/in/julian-baker-3902a9187/';
+
                 } else if (command === 'resources') {
                     //outputArea.innerHTML = '';
                     //window.location.href = 'filer.html';
@@ -341,8 +354,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Yeahhh this is the help command.. if you're reading this deal with it because I have to aswell. It's obviously super inifient.. but its MY website not yours lol. Code it yourself
                 } else if (command === 'help') {
                     typeSpeed = 10;
-                    typeMessage("\\b Oh, so you need help huh? very well.. I\'ll give in... \\e \\n \\i home\\e or \\i main\\e: will bring you to the main landing page of my website\\n\\isocial\\e: Reads off my various social media accounts to get in contact with me \\n \\iHXN\\e: Brings you to the Hexenring Media home page\\n\\ibaked\\e: Directly sends you to my art instagram \\n\\i witchhouse\\e: check out the shop I got this sick tattoo at!\\n\\i CC\\e: Brings you to the Caffienated Coder Redbubble where I sell some of my designs\\n\\iheil_spez\\e: You really wanna see my reddit? Welp, good luck.\\n\\itop_secret\\e: Did you not read that?? It\'s \\bTOP. SECRET.\\e Understand?\\n\\ih4ck3r_m0d3\\e: This redirects you to my github page\\n\\i set_user\\e: Prompts you to change the username of who is logged in\\n\\iclear\\e: Clears the console\\n\\ilight_mode\\e: Toggles between light and dark mode in the console\\n\\i donate\\e: Buy me a coffee?? That would be so dope\\n \\iset_speed\\e: Allows you to adjust the typing speed\\n\\i specs\\e: Shows the specs of my current PC build\\n\\iresources\\e: Lists off some of my favorite resources I use all the time \\n\\i show_code\\e: Brings you to the code base of this page\\n\\i welcome\\e: Brings up the welcome message again\\n\\i help\\e: homie... this is help you know what it does\\n", outputArea);
-                    typeSpeed = 40;
+                    typeMessage("\\b Oh, so you need help huh? very well.. I\'ll give in... \\e \\n \\i home\\e or \\i main\\e: will bring you to the main landing page of my website\\n\\isocial\\e: Reads off various social media accounts to hit me up on \\n \\i contact\\e: Similar to social, but more professionally focused\\n\\iHXN\\e: Brings you to the Hexenring Media home page\\n\\ibaked\\e: Directly sends you to my art instagram \\n\\i witchhouse\\e: check out the shop I got this sick tattoo at!\\n\\i CC\\e: Brings you to the Caffienated Coder Redbubble where I sell some of my designs for nerds like us\\n\\i linked\\e: Brings you to my Linkedin page\\n\\iheil_spez\\e: You really wanna see my reddit? Welp, good luck.\\n\\itop_secret\\e: Did you not read that?? It\'s \\bTOP. SECRET.\\e Understand?\\n\\ih4ck3r_m0d3\\e: This redirects you to my github page\\n\\i set_user\\e: Prompts you to change the username of who is logged in\\n\\iclear\\e: Clears the console\\n\\ilight_mode\\e: Toggles between light and dark mode in the console\\n\\i donate\\e: Buy me a coffee?? That would be so dope\\n \\iset_speed\\e: Allows you to adjust the typing speed\\n\\i specs\\e: Shows the specs of my current PC build\\n\\iresources\\e: Lists off some of my favorite resources I use all the time \\n\\i show_code\\e: Brings you to the code base of this page\\n\\i welcome\\e: Brings up the welcome message again\\n\\i help\\e: homie... this is help you know what it does\\n", outputArea);
+                    typeSpeed = userSpeed;
                     //     \\i COMMAND\\e: DESCRIPTION\\n
 
                     // Command not recognized state
