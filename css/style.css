@@ -305,7 +305,7 @@ hr:not(.thunder) {
 .nav-txt {}
 
 
-a {
+a, button {
     color: var(--gruv-fg);
     text-decoration: none;
     font-family: Neon;
@@ -564,7 +564,7 @@ hr {
 }
 
 /* mobile breakpoint*/
-@media (max-width: 768px) {
+@media (max-width: 1079px) {
     .mobile-menu {
         display: block;
     }

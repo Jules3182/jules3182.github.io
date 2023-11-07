@@ -23,7 +23,86 @@ This page will have 4 main categories:
 <head>
     <!-- Font Awesome Sick Stuff --->
     <script src="https://kit.fontawesome.com/e67447dbc9.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-buttons button');
+            const gridItems = document.querySelectorAll('.grid-item');
+
+            categoryButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const selectedCategory = button.getAttribute('data-category');
+
+                    gridItems.forEach((item) => {
+                        const itemCategories = item.getAttribute('data-category').split(' ');
+
+                        if (selectedCategory === 'all' || itemCategories.includes(selectedCategory)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+    </script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
+<body>
+    <div class="full">
+
+        <hr>
+        <!-- Main Stuff -->
+        <h1 class="title centered">My Portfolio</h1>
+        <br><br>
+
+        <!-- Main Stuff -->
+
+        <div class="portfolio-main infobox centered">
+            <div class="category-buttons centered">
+                <button class="nav-el neon-o nav-txt" data-category="all">All</button>
+                <button class="nav-el neon-o nav-txt" data-category="3D">3D Art</button>
+                <button class="nav-el neon-o nav-txt" data-category="3D">2D Art</button>
+                <button class="nav-el neon-o nav-txt" data-category="Anim">Animations</button>
+                <button class="nav-el neon-o nav-txt" data-category="Drone">Drone Footage</button>
+                <button class="nav-el neon-o nav-txt" data-category="Photo">Photography</button>
+            </div>
+            <br><br>
+
+
+            <div class="photo-grid centered">
+                <div class="grid-item" data-category="category1 category2">
+                    <img src="https://media.istockphoto.com/id/183245820/photo/toilet-paper-sitting-on-its-holder.jpg?s=612x612&w=0&k=20&c=-kR_iC0YE2YD91o0vbmqSZLFeRos-RuvCt_YiKHKJ40=" alt="Image 1">
+                </div>
+                <div class="grid-item" data-category="category2">
+                    <img src="https://media.istockphoto.com/id/183245820/photo/toilet-paper-sitting-on-its-holder.jpg?s=612x612&w=0&k=20&c=-kR_iC0YE2YD91o0vbmqSZLFeRos-RuvCt_YiKHKJ40=" alt="Image 2">
+                </div>
+                <div class="grid-item" data-category="category1 category3">
+                    <img src="https://media.istockphoto.com/id/183245820/photo/toilet-paper-sitting-on-its-holder.jpg?s=612x612&w=0&k=20&c=-kR_iC0YE2YD91o0vbmqSZLFeRos-RuvCt_YiKHKJ40=" alt="Image 3">
+                </div>
+
+            </div>
+
+            <br><br><br>
+            <ul class="page-links">
+                <li class="page-l tooltip"><span class="tooltiptext neon">Linkedin</span><a href="https://www.linkedin.com/in/julian-baker-3902a9187/"><i class="fa-brands fa-linkedin"></i></a></li>
+
+                <li class="page-l tooltip"><span class="tooltiptext neon">Instagram</span><a href="https://www.instagram.com/baked.blend/"><i class="fa-brands fa-instagram"></i></a></li>
+
+                <li class="page-l tooltip"><span class="tooltiptext neon">Github</span><a href="https://github.com/Jules3182"><i class="fa-brands fa-github"></i></a></li>
+
+                <li class="page-l tooltip click-curse" id="ModalBtn"><span class="tooltiptext neon">PGP</span><a><i class="fa-solid fa-key"></i></a></li>
+
+                <li class="page-l tooltip"><span class="tooltiptext neon">Email</span><a href=""><i class="fa-solid fa-envelope"></i></a></li>
+
+                <li class="page-l tooltip"><span class="tooltiptext neon">Thingiverse</span><a href="https://www.thingiverse.com/jtoad23/designs"><i class="fa-solid fa-cube"></i></a></li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+</html>
