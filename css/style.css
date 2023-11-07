@@ -17,7 +17,8 @@ body {
     margin: auto;
     padding: 0;
     margin-top: 4%;
-    overflow: hidden; /* okay this is an issue that needs to be addressed. */
+    overflow: hidden;
+    /* okay this is an issue that needs to be addressed. */
 }
 
 @font-face {
@@ -57,7 +58,7 @@ p {
     z-index: 2;
 }
 
-.pubkey{
+.pubkey {
     width: inherit;
 }
 
@@ -546,4 +547,39 @@ hr {
     100% {
         opacity: 100%;
     }
+}
+
+
+.mobile-menu {
+    display: none;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-list li {
+    margin-bottom: 10px;
+}
+
+/* mobile breakpoint*/
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+    }
+    .c2 {
+        display: none;
+    }
+    .c1 {
+        width: 100%;
+    }
+    body {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+
+.mob-butt {
+    font-size: 100%;
 }
