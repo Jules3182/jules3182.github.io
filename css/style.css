@@ -190,7 +190,7 @@ hr:not(.thunder) {
     padding: 10px;
     background-color: var(--gruv-bg);
     border-radius: 20px;
-    backdrop-filter: hue-rotate(10deg) blur(4px);
+    backdrop-filter: hue-rotate(10deg) blur(8px);
     animation: 1s ease-out 0s 1 slideInUp;
     border: 1px solid var(--gruv-orange);
     -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-orange);
