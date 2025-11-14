@@ -1,16 +1,18 @@
 :root {
     --gruv-aqua: #d3869b;
     --gruv-bg: rgba(60, 56, 54, 0.3);
-    --gruv-fg: #fbf1c7;
-    --gruv-orange: #8ec07c;
+    --gruv-fg: #ffffff;
+    --gruv-orange: #ffffff;
     --thunder-duration: 10s;
     --thunder-delay: 5s;
     --gruv-dark: rgba(131, 165, 152, 1);
 }
 
 body {
-	background: #282828;
-	animation: gradient 15s ease infinite;
+	background-image: url("https://images.unsplash.com/photo-1741184353707-24b71b23b21a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-size: cover;
+    background-repeat: no-repeat;
+    animation: gradient 15s ease infinite;
 	height: 100%;
     margin: auto;
     padding: 0;
@@ -18,6 +20,7 @@ body {
     /* okay this is an issue that needs to be addressed. */
 }
 
+/*
 @font-face {
     font-family: 'Quantum';
     font-style: normal;
@@ -38,9 +41,12 @@ body {
     font-weight: 300;
     src: local('Extros'), local('Extros'), url("../fonts/Extros.ttf");
 }
-
+*/
 p {
-    font-family: Extros;
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     text-transform: uppercase;
     font-size: 2.2vh;
 }
@@ -124,64 +130,10 @@ input:checked + .slider:before {
     z-index: 1;
 }
 
-hr.thunder {
-    border: unset;
-    position: absolute;
-    animation-name: thunder;
-    animation-duration: var(--thunder-duration);
-    animation-timing-function: linear;
-    animation-delay: var(--thunder-delay);
-    animation-iteration-count: infinite;
-}
-
-hr:not(.thunder) {
-    width: 50px;
-    border-color: transparent;
-    border-right-color: rgba(131, 165, 152, 0.7);
-    border-right-width: 50px;
-    border: 1px solid var(--gruv-dark);
-    -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-dark);
-    box-shadow: 0px 0px 10px 0px var(--gruv-dark);
-    position: absolute;
-    bottom: 100%;
-    transform-origin: 100% 50%;
-    animation-name: rain;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-@keyframes rain {
-    from {
-        transform: rotate(75deg) translateX(0);
-    }
-
-    to {
-        transform: rotate(75deg) translateX(calc(100vh + 20px));
-    }
-}
-
-@keyframes thunder {
-    0% {
-        background-color: transparent;
-    }
-
-    1% {
-        background-color: white;
-    }
-
-    2% {
-        background-color: rgba(255, 255, 255, 0.8);
-    }
-
-    8% {
-        background-color: transparent;
-    }
-}
-
-
 .infobox {
-    font-family: 'Open Sans';
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     color: var(--gruv-fg);
@@ -193,8 +145,6 @@ hr:not(.thunder) {
     backdrop-filter: hue-rotate(10deg) blur(8px);
     animation: 1s ease-out 0s 1 slideInUp;
     border: 1px solid var(--gruv-orange);
-    -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-orange);
-    box-shadow: 0px 0px 10px 0px var(--gruv-orange);
     padding: 10px;
     z-index: 2;
 }
@@ -217,62 +167,52 @@ hr:not(.thunder) {
 
 .neon {
     border: 1px solid var(--gruv-aqua);
-    -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
-    box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
     padding: 10px;
 }
 
 .neon-o {
     border: 1px solid var(--gruv-orange);
-    -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-orange);
-    box-shadow: 0px 0px 10px 0px var(--gruv-orange);
     padding: 10px;
 }
 
 .neon-o:hover {
     border: 1px solid var(--gruv-aqua);
-    -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
-    box-shadow: 0px 0px 10px 0px var(--gruv-aqua);
     padding: 10px;
 }
 
 .neon-bar {
     border-bottom: 1px solid var(--gruv-aqua);
-    -webkit-box-shadow: 0px 5px 10px -4px var(--gruv-aqua);
-    box-shadow: 0px 5px 10px -4px var(--gruv-aqua);
     background-color: rgba(60, 56, 54, 0.7);
     height: 5vh;
 }
 
 .title {
     color: var(--gruv-orange);
-    font-family: Extros;
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     font-size: 500%;
-    -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
-    text-shadow: 0px 0px 10px var(--gruv-orange);
-    animation: flicker 3s linear infinite;
-
     text-transform: uppercase;
 }
 
 .sub-title {
     color: var(--gruv-orange);
-    font-family: Extros;
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     font-size: 3vh;
-    -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
-    text-shadow: 0px 0px 10px var(--gruv-orange);
-    animation: flicker 3s linear infinite;
-
     text-transform: uppercase;
 }
 
 .sub-sub-title {
     color: var(--gruv-orange);
-    font-family: Extros;
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     font-size: 150%;
-    -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
-    text-shadow: 0px 0px 10px var(--gruv-orange);
-    animation: flicker 3s linear infinite;
     text-align: left;
     padding-left: 3vh;
     text-transform: uppercase;
@@ -280,11 +220,11 @@ hr:not(.thunder) {
 
 .sub-sub-title-l {
     color: var(--gruv-orange);
-    font-family: Extros;
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     font-size: 150%;
-    -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
-    text-shadow: 0px 0px 10px var(--gruv-orange);
-    animation: flicker 3s linear infinite;
     padding-right: 3vh;
     text-align: right;
     margin-left: auto;
@@ -314,7 +254,10 @@ hr:not(.thunder) {
     white-space: nowrap;
     font-size: 2vw;
     backdrop-filter: hue-rotate(10deg) blur(8px);
-    font-family: Extros;
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     text-transform: uppercase;
 
 }
@@ -325,23 +268,18 @@ hr:not(.thunder) {
 a, button {
     color: var(--gruv-fg);
     text-decoration: none;
-    font-family: Neon;
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     color: var(--gruv-orange);
-    font-family: Neon;
     font-size: 3vh;
-    -webkit-text-shadow: 0px 0px 10px var(--gruv-orange);
-    text-shadow: 0px 0px 10px var(--gruv-orange);
-    animation: flicker 10s linear infinite;
 }
 
 a:hover {
     color: var(--gruv-fg);
     text-decoration: none;
     color: var(--gruv-aqua);
-    -webkit-text-shadow: 0px 0px 10px var(--gruv-aqua);
-    text-shadow: 0px 0px 10px var(--gruv-aqua);
-    animation: flicker 10s linear infinite;
-
 }
 
 .centered {
@@ -356,8 +294,6 @@ hr {
 }
 
 .sub-hr {
-    border-bottom: 1px solid var(--gruv-orange);
-    box-shadow: 0px 4px 2px -2px var(--gruv-orange);
     width: fit-content;
 }
 
@@ -420,9 +356,6 @@ hr {
     background-color: var(--gruv-bg);
     border-radius: 20px;
     backdrop-filter: hue-rotate(120deg) blur(2px);
-    border: 1px solid var(--gruv-orangeorange);
-    -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-orange);
-    box-shadow: 0px 0px 10px 0px var(--gruv-orange);
     padding: 10px;
 }
 
@@ -455,9 +388,11 @@ hr {
 .close:focus {
     color: var(--gruv-fg);
     text-decoration: none;
-    font-family: Neon;
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     color: var(--gruv-aqua);
-    font-family: Neon;
     -webkit-text-shadow: 0px 0px 10px var(--gruv-aqua);
     text-shadow: 0px 0px 10px var(--gruv-aqua);
     animation: flicker 10s linear infinite;
@@ -501,57 +436,6 @@ hr {
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
     visibility: visible;
-}
-
-/* Sweet Flicker borrowed from https://codepen.io/mandymichael/pen/aJLYVz */
-
-@keyframes flicker {
-
-    0%,
-    19.999%,
-    22%,
-    62.999%,
-    64%,
-    64.999%,
-    70%,
-    100% {
-        opacity: .99;
-        text-shadow: -1px -1px 0 $outline, 1px -1px 0 $outline, -1px 1px 0 $outline, 1px 1px 0 $outline, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
-    }
-
-    20%,
-    21.999%,
-    63%,
-    63.999%,
-    65%,
-    69.999% {
-        opacity: 0.4;
-        text-shadow: none;
-    }
-}
-
-.slide-right {
-    animation: 1s ease-out 0s 1 slideInRight;
-}
-
-@keyframes slideInRight {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInUp {
-    0% {
-        transform: translateY(100%);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
 }
 
 @keyframes fadeIn {
