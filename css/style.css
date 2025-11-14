@@ -1,81 +1,318 @@
+/* ==============================
+   Variables/General
+============================== */
+
 :root {
     --gruv-aqua: #d3869b;
     --gruv-bg: rgba(60, 56, 54, 0.3);
-    --gruv-fg: #ffffff;
-    --gruv-orange: #ffffff;
+    --gruv-dark: rgba(131, 165, 152, 1);
+    --fg-color: #ffffff;
+    --text-color: #ffffff;
     --thunder-duration: 10s;
     --thunder-delay: 5s;
-    --gruv-dark: rgba(131, 165, 152, 1);
-}
-
-body {
-	background-image: url("https://images.unsplash.com/photo-1741184353707-24b71b23b21a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-	background-size: cover;
-    background-repeat: no-repeat;
-    animation: gradient 15s ease infinite;
-	height: 100%;
-    margin: auto;
-    padding: 0;
-    margin-top: 4%;
-    /* okay this is an issue that needs to be addressed. */
-}
-
-/*
-@font-face {
-    font-family: 'Quantum';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Quantum'), local('Quantum'), url("../fonts/Quantum.otf");
-}
-
-@font-face {
-    font-family: 'Neon';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Neon'), local('Neon'), url("../fonts/NEON.TTF");
-}
-
-@font-face {
-    font-family: 'Extros';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Extros'), local('Extros'), url("../fonts/Extros.ttf");
-}
-*/
-p {
-    font-family: "Elms Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    text-transform: uppercase;
-    font-size: 2.2vh;
+    --border-radius: 20px;
+    --padding: 10px;
+    --font-primary: "Elms Sans", sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1741184353707-24b71b23b21a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 4%;
+    font-family: var(--font-primary);
+    height: 100%;
+}
+
+/* ==============================
+   Text styles
+============================== */
+
+p, a, button {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-color);
+}
+
+p {
+    text-transform: uppercase;
+    font-size: 2.2vh;
+}
+
+.title {
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.sub-title {
+    font-size: 3vh;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.sub-sub-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    padding-left: 3vh;
+}
+
+.sub-sub-title-l {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    padding-right: 3vh;
+    text-align: right;
+    margin-left: auto;
+}
+
+.mainttext {
+    font-size: 2vh;
+}
+
+/* ==============================
+   Page lyout
+============================== */
 
 .full {
     position: relative;
     z-index: 2;
 }
 
-.pubkey {
-    width: inherit;
+.row.front {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 100vh;
 }
+
+.propper {
+    margin: 0;
+    transform: none;
+    text-align: center;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 5vh;
+}
+
+.column.c1 {
+    display: block;
+}
+
+.column.c2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.column.c2 > .navbar {
+    align-self: flex-start;
+}
+
+.column.c2 > .propper {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* ==============================
+   Components
+============================== */
+
+.infobox {
+    font-size: 14px;
+    color: var(--fg-color);
+    width: 80%;
+    height: 100%;
+    padding: var(--padding);
+    background-color: var(--gruv-bg);
+    border-radius: var(--border-radius);
+    backdrop-filter: hue-rotate(10deg) blur(8px);
+    border: 1px solid var(--text-color);
+    animation: 1s ease-out 0s 1 slideInUp;
+    z-index: 2;
+}
+
+.circular {
+    display: block;
+    margin: 5% auto 0 auto;
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+    border: 1px solid var(--text-color);
+    box-shadow: 0px 0px 10px 0px var(--text-color);
+    padding: var(--padding);
+}
+
+.neon {
+    border: 1px solid var(--gruv-aqua);
+    padding: var(--padding);
+}
+
+.neon-o {
+    border: 1px solid var(--text-color);
+    padding: var(--padding);
+}
+
+.neon-o:hover {
+    border-color: var(--gruv-aqua);
+}
+
+.neon-bar {
+    border-bottom: 1px solid var(--gruv-aqua);
+    background-color: rgba(60, 56, 54, 0.7);
+    height: 5vh;
+}
+
+/* ==============================
+   Links & Buttons
+============================== */
+a, button {
+    text-decoration: none;
+    font-size: 3vh;
+}
+
+a:hover {
+    color: var(--gruv-aqua);
+}
+
+/* ==============================
+   Navbar
+============================== */
+
+.navbar {
+    list-style: none;
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.nav-el {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 2vw;
+    backdrop-filter: hue-rotate(10deg) blur(8px);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* ##############
+Added Bits and Bobs
+############## */
+
+/* ==============================
+   Modal stuff
+============================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    margin: 20vh auto 10vh auto;
+    padding: var(--padding);
+    width: 40%;
+    height: 60%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: var(--fg-color);
+    background-color: var(--gruv-bg);
+    border-radius: var(--border-radius);
+    backdrop-filter: hue-rotate(120deg) blur(2px);
+}
+
+.close {
+    float: right;
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--fg-color);
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--gruv-aqua);
+    text-shadow: 0px 0px 10px var(--gruv-aqua);
+    animation: flicker 10s linear infinite;
+}
+
+/* ==============================
+   Tooltips
+============================== */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 10vh;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 6px;
+    top: 130%;
+    left: 50%;
+    margin-left: -5vh;
+    font-family: neon;
+    font-size: 4.5rem;
+    color: var(--gruv-aqua);
+    position: absolute;
+    z-index: 1;
+}
+=
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* ==============================
+   Switch (toggle)
+============================== */
 
 .switch {
     position: relative;
     display: inline-block;
     width: 104px;
     height: 54px;
-    float: left;
-    margin-left: 0%;
-    margin-right: 1%;
-    margin-top: 1%;
-    display: inline;
-    font-size: 200%;
+    margin: 1%;
 }
 
 .switch input {
@@ -90,7 +327,6 @@ p {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
     transition: .4s;
 }
 
@@ -102,7 +338,6 @@ p {
     left: 4px;
     bottom: 4px;
     background-color: #666;
-    -webkit-transition: .4s;
     transition: .4s;
 }
 
@@ -110,344 +345,13 @@ input:checked + .slider {
     background-color: #c3feff;
 }
 
-input:focus + .slider {
-    box-shadow: 0 0 1px #c3feff;
-}
-
 input:checked + .slider:before {
-    -webkit-transform: translateX(50px);
-    -ms-transform: translateX(50px);
     transform: translateX(50px);
 }
 
-
-
-.front {
-    z-index: 2
-}
-
-.middle {
-    z-index: 1;
-}
-
-.infobox {
-    font-family: "Elms Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--gruv-fg);
-    width: 80%;
-    height: 100%;
-    padding: 10px;
-    background-color: var(--gruv-bg);
-    border-radius: 20px;
-    backdrop-filter: hue-rotate(10deg) blur(8px);
-    animation: 1s ease-out 0s 1 slideInUp;
-    border: 1px solid var(--gruv-orange);
-    padding: 10px;
-    z-index: 2;
-}
-
-.mainttext {
-    font-size: 2vh;
-}
-
-.circular {
-    display: block;
-    margin-bottom: 0;
-    margin-top: 5%;
-    border-radius: 50%;
-    width: 20vh;
-    height: 20vh border: 1px solid var(--gruv-orange);
-    -webkit-box-shadow: 0px 0px 10px 0px var(--gruv-orange);
-    box-shadow: 0px 0px 10px 0px var(--gruv-orange);
-    padding: 10px;
-}
-
-.neon {
-    border: 1px solid var(--gruv-aqua);
-    padding: 10px;
-}
-
-.neon-o {
-    border: 1px solid var(--gruv-orange);
-    padding: 10px;
-}
-
-.neon-o:hover {
-    border: 1px solid var(--gruv-aqua);
-    padding: 10px;
-}
-
-.neon-bar {
-    border-bottom: 1px solid var(--gruv-aqua);
-    background-color: rgba(60, 56, 54, 0.7);
-    height: 5vh;
-}
-
-.title {
-    color: var(--gruv-orange);
-    font-family: "Elms Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-size: 500%;
-    text-transform: uppercase;
-}
-
-.sub-title {
-    color: var(--gruv-orange);
-    font-family: "Elms Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-size: 3vh;
-    text-transform: uppercase;
-}
-
-.sub-sub-title {
-    color: var(--gruv-orange);
-    font-family: "Elms Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-size: 150%;
-    text-align: left;
-    padding-left: 3vh;
-    text-transform: uppercase;
-}
-
-.sub-sub-title-l {
-    color: var(--gruv-orange);
-    font-family: "Elms Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-size: 150%;
-    padding-right: 3vh;
-    text-align: right;
-    margin-left: auto;
-
-    text-transform: uppercase;
-}
-
-.navbar {
-    list-style-type: none;
-    width: 100%;
-    margin-left: 0%;
-    margin-right: auto;
-    display: inline-block;
-    white-space: nowrap;
-
-}
-
-.navbar li{
-    display: inline;
-}
-.nav-el {
-    float: center;
-    margin-left: 0%;
-    margin-right: 1%;
-    margin-top: 1%;
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 2vw;
-    backdrop-filter: hue-rotate(10deg) blur(8px);
-    font-family: "Elms Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    text-transform: uppercase;
-
-}
-
-.nav-txt {}
-
-
-a, button {
-    color: var(--gruv-fg);
-    text-decoration: none;
-    font-family: "Elms Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    color: var(--gruv-orange);
-    font-size: 3vh;
-}
-
-a:hover {
-    color: var(--gruv-fg);
-    text-decoration: none;
-    color: var(--gruv-aqua);
-}
-
-.centered {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-hr {
-    position: relative;
-    z-index: 1;
-}
-
-.sub-hr {
-    width: fit-content;
-}
-
-.page-l {
-    display: inline;
-    font-size: 30%;
-    margin-right: 5%;
-}
-
-.page-links {
-    margin-left: 0%;
-}
-
-/* Modal - fixed */
-
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 3;
-    /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Black w/ opacity */
-}
-
-.propper {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    animation: 2s ease-out 0s 1 fadeIn;
-}
-
-/* Modal Content/Box */
-.modal-content {
-    margin: 15% auto;
-    /* 15% from the top and centered */
-    padding: 20px;
-    width: 40%;
-    font-family: 'Open Sans';
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--gruv-fg);
-    /* Fix this latter for mobile (80% on mobile, 35% normal*/
-    height: 60%;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
-    padding: 10px;
-    background-color: var(--gruv-bg);
-    border-radius: 20px;
-    backdrop-filter: hue-rotate(120deg) blur(2px);
-    padding: 10px;
-}
-
-.column {
-    float: left;
-    width: 50%;
-    margin-top: 5vh;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* The Close Button */
-.close {
-    float: right;
-    display: flex;
-    align-items: flex-end;
-    height: 79%;
-    shape-outside: inset(calc(100% - 100px) 0 0);
-    font-size: 500%;
-    font-weight: bold;
-    bottom: 10%;
-}
-
-.close:hover,
-.close:focus {
-    color: var(--gruv-fg);
-    text-decoration: none;
-    font-family: "Elms Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    color: var(--gruv-aqua);
-    -webkit-text-shadow: 0px 0px 10px var(--gruv-aqua);
-    text-shadow: 0px 0px 10px var(--gruv-aqua);
-    animation: flicker 10s linear infinite;
-    cursor: pointer;
-}
-
-/* Quick Fixes */
-
-.click-curse {
-    cursor: pointer;
-}
-
-
-/* Tool Tips!! */
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 10vh;
-    text-align: center;
-    padding: 5px 20px;
-    border-radius: 6px;
-    top: 130%;
-    left: 50%;
-    margin-left: -5vh;
-
-    font-family: neon;
-    font-size: 450%;
-    color: var(--gruv-aqua);
-
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0%;
-    }
-
-    100% {
-        opacity: 100%;
-    }
-}
-
+/* ==============================
+   Mobile
+============================== */
 
 .mobile-menu {
     display: none;
@@ -456,7 +360,6 @@ hr {
 .menu-list {
     list-style: none;
     padding: 0;
-
 }
 
 .menu-list li {
@@ -464,23 +367,21 @@ hr {
     display: inline-block;
 }
 
-/* mobile breakpoint*/
 @media (max-width: 1079px) {
-    .mobile-menu {
-        display: block;
-    }
-    .c2 {
-        display: none;
-    }
-    .c1 {
-        width: 100%;
-    }
+    .mobile-menu { display: block; }
+    .c2 { display: none; }
+    .c1 { width: 100%; }
     body {
         overflow-y: scroll;
         overflow-x: hidden;
     }
 }
 
-.mob-butt {
-    font-size: 100%;
+/* ==============================
+   Animations
+============================== */
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
