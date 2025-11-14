@@ -3,7 +3,7 @@
 ============================== */
 
 :root {
-    --gruv-aqua: #d3869b;
+    --gruv-aqua: rgb(3, 69, 49);
     --gruv-bg: rgba(60, 56, 54, 0.3);
     --gruv-dark: rgba(131, 165, 152, 1);
     --fg-color: #ffffff;
@@ -76,6 +76,10 @@ p {
 
 .mainttext {
     font-size: 2vh;
+}
+
+.dark {
+    color: #8e8e8e;
 }
 
 /* ==============================
@@ -223,6 +227,71 @@ a:hover {
     backdrop-filter: hue-rotate(10deg) blur(8px);
     font-weight: 400;
     text-transform: uppercase;
+}
+
+/* ==============================
+   Resource page Styles
+============================== */
+
+.resources-container {
+    max-width: 900px;
+    margin: 5vh auto;
+}
+
+h1.page-title {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.resource-card {
+    background-color: var(--gruv-bg);
+    border: 1px solid var(--fg-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 15px var(--fg-color);
+}
+
+.resource-card h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+    margin-bottom: 1rem;
+}
+
+.resource-card a {
+    text-decoration: none;
+    color: var(--gruv-aqua);
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1.page-title {
+        font-size: 2.5rem;
+    }
+
+    .resource-card {
+        padding: 1rem;
+    }
+}
+
+.resource-category {
+    background-color: var(--gruv-bg);
+    border: 1px solid var(--fg-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    backdrop-filter: hue-rotate(10deg) blur(1px);
 }
 
 /* ##############
