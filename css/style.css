@@ -3,7 +3,7 @@
 ============================== */
 
 :root {
-    --gruv-aqua: rgb(3, 69, 49);
+    --gruv-aqua: rgb(210, 210, 210);
     --gruv-bg: rgba(60, 56, 54, 0.3);
     --gruv-dark: rgba(131, 165, 152, 1);
     --fg-color: #ffffff;
@@ -24,10 +24,23 @@
 body {
     background-image: url("https://images.unsplash.com/photo-1741184353707-24b71b23b21a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    margin-top: 4%;
+    margin-top: 1%;
     font-family: var(--font-primary);
     height: 100%;
+}
+
+@media (max-width: 1079px) {
+    .mobile-menu { display: block; }
+    .c2 { display: none !important; }
+    .c1 { 
+        width: 100% !important;
+        margin: 0 auto !important;
+        max-width: 750px;
+        padding: 0 20px;
+        justify-content: center !important;
+    }
 }
 
 /* ==============================
@@ -49,7 +62,25 @@ p {
 .title {
     font-size: 5rem;
     text-transform: uppercase;
+    display: inline-block;
+    transform: scaleY(1.1);
+    transform-origin: bottom;
+    position: relative;
     color: var(--text-color);
+}
+
+
+/* FORCE the text above all blur */
+.title span {
+    position: relative;
+    z-index: 2;        /* ensures no blurring hits the text */
+    color: rgba(255,255,255,0.9);
+    font-weight: 700;
+    font-size: 6rem;
+
+    /* Optional: vertical stretch */
+    transform: scaleY(1.2);
+    display: inline-block;
 }
 
 .sub-title {
@@ -144,6 +175,13 @@ p {
     text-align: center;
 }
 
+.stuck {
+    position: sticky;
+    top: 20px;
+    height: 100vh;
+    overflow: hidden; 
+}
+
 /* ==============================
    Components
 ============================== */
@@ -154,14 +192,33 @@ p {
     width: 80%;
     height: 100%;
     padding: var(--padding);
-    background-color: var(--gruv-bg);
-    border-radius: var(--border-radius);
-    backdrop-filter: hue-rotate(10deg) blur(8px);
-    border: 1px solid var(--text-color);
-    animation: 1s ease-out 0s 1 slideInUp;
     z-index: 2;
 }
 
+.liquid-glass{
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px) saturate(180%) contrast(110%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%) contrast(110%);
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.5),
+        inset 0 -1px 8px rgba(0, 0, 0, 0.15),
+        0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.liquid-glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 10%, rgba(255,255,255,0.15), transparent 20%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
 .circular {
     display: block;
     margin: 5% auto 0 auto;
@@ -179,7 +236,6 @@ p {
 }
 
 .neon-o {
-    border: 1px solid var(--text-color);
     padding: var(--padding);
 }
 
@@ -205,6 +261,10 @@ a:hover {
     color: var(--gruv-aqua);
 }
 
+.page-l {
+    padding: 2%;
+}
+
 /* ==============================
    Navbar
 ============================== */
@@ -218,13 +278,13 @@ a:hover {
 
 .navbar li {
     display: inline;
+    padding: 1%;
 }
 
 .nav-el {
     display: inline-block;
     white-space: nowrap;
     font-size: 2vw;
-    backdrop-filter: hue-rotate(10deg) blur(8px);
     font-weight: 400;
     text-transform: uppercase;
 }
@@ -356,17 +416,15 @@ Added Bits and Bobs
     width: 10vh;
     text-align: center;
     padding: 5px 20px;
-    border-radius: 6px;
+    border-radius: 6%;
     top: 130%;
     left: 50%;
     margin-left: -5vh;
-    font-family: neon;
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     color: var(--gruv-aqua);
     position: absolute;
     z-index: 1;
 }
-=
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
