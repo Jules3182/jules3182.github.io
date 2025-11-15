@@ -37,7 +37,7 @@ body {
     .c1 { 
         width: 100% !important;
         margin: 0 auto !important;
-        max-width: 750px;
+        max-width: 110%;
         padding: 0 20px;
         justify-content: center !important;
     }
@@ -60,7 +60,7 @@ p {
 }
 
 .title {
-    font-size: 5rem;
+    font-size: 1rem;
     text-transform: uppercase;
     display: inline-block;
     transform: scaleY(1.1);
@@ -68,6 +68,17 @@ p {
     position: relative;
     color: var(--text-color);
 }
+
+.ascii-title {
+    font-family: "Courier New", monospace;
+    font-size: 1.2vw;
+    line-height: 1.2;
+    letter-spacing: 0px !important;
+    white-space: pre !important;
+    color: white;
+    display: block;
+}
+
 
 
 /* FORCE the text above all blur */
@@ -200,7 +211,7 @@ p {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px) saturate(180%) contrast(110%);
     -webkit-backdrop-filter: blur(12px) saturate(180%) contrast(110%);
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
 
     border: 1px solid rgba(255, 255, 255, 0.25);
