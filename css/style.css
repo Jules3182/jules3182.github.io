@@ -22,7 +22,7 @@
 }
 
 body {
-    background-image: url("https://images.unsplash.com/photo-1741184353707-24b71b23b21a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-image: url("https://images.unsplash.com/photo-1659698314782-fe80a44632b2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -75,7 +75,7 @@ p {
     line-height: 1.2;
     letter-spacing: 0px !important;
     white-space: pre !important;
-    color: white;
+    color: var(--text-color);
     display: block;
 }
 
@@ -129,7 +129,8 @@ p {
 ============================== */
 
 .full {
-    position: relative;
+    top: 0px;
+    position: absolute;
     z-index: 2;
 }
 
@@ -188,7 +189,7 @@ p {
 
 .stuck {
     position: sticky;
-    top: 20px;
+    top: 6%;
     height: 100vh;
     overflow: hidden; 
 }
@@ -295,7 +296,7 @@ a:hover {
 .nav-el {
     display: inline-block;
     white-space: nowrap;
-    font-size: 2vw;
+    font-size: 2vh;
     font-weight: 400;
     text-transform: uppercase;
 }
