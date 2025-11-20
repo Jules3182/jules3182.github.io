@@ -20,19 +20,22 @@ This page will have 4 main categories:
 
 <!DOCTYPE html>
 <html>
-
-<head>
-    <!-- Font Awesome Sick Stuff --->
-    <script src="https://kit.fontawesome.com/e67447dbc9.js" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryButtons = document.querySelectorAll('.category-buttons button');
-            const gridItems = document.querySelectorAll('.grid-item');
-
-            categoryButtons.forEach((button) => {
-                button.addEventListener('click', () => {
-                    const selectedCategory = button.getAttribute('data-category');
-
+    
+    <head>
+        <!-- Font Awesome Sick Stuff --->
+        <script src="https://kit.fontawesome.com/e67447dbc9.js" crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const categoryButtons = document.querySelectorAll('.category-buttons button');
+                const gridItems = document.querySelectorAll('.grid-item');
+                const grid = document.querySelector('.photo-grid');
+                const items = Array.from(grid.children);
+                
+                // Sorting Functionality
+                categoryButtons.forEach((button) => {
+                    button.addEventListener('click', () => {
+                        const selectedCategory = button.getAttribute('data-category');
+            
                     categoryButtons.forEach(btn => btn.classList.remove('active'));
 
                     button.classList.add('active');
@@ -45,9 +48,44 @@ This page will have 4 main categories:
                         } else {
                             item.style.display = 'none';
                         }
-                    });
+
+                        // Disables prominent when in other categories for cleaner "search"
+                        if (selectedCategory === 'all') {
+                            if (item.classList.contains('was-prominent')) {
+                            item.classList.add('prominent');
+                            }
+                            if (item.classList.contains('was-prominent-tall')) {
+                            item.classList.add('prominent-tall');
+                            }
+                            if (item.classList.contains('was-prominent-wide')) {
+                            item.classList.add('prominent-wide');
+                            }
+                        } 
+                
+                        else {
+                            if (item.classList.contains('prominent')) {
+                                item.classList.remove('prominent');
+                                item.classList.add('was-prominent'); 
+                            }
+                            if (item.classList.contains('prominent-tall')) {
+                                item.classList.remove('prominent-tall');
+                                item.classList.add('was-prominent-tall'); 
+                            }
+                            if (item.classList.contains('prominent-wide')) {
+                                item.classList.remove('prominent-wide');
+                                item.classList.add('was-prominent-wide'); 
+                            }
+                    }});
                 });
             });
+
+            // Randomizes the order of grid items
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [items[i], items[j]] = [items[j], items[i]];
+            }
+
+            items.forEach(item => grid.appendChild(item));
         });
 
     </script>
@@ -93,75 +131,92 @@ ____             __  ____      ___
                 <button class="nav-el neon-o liquid-glass" data-category="3D">3D Art</button>
                 <button class="nav-el neon-o liquid-glass" data-category="2D">2D Art</button>
                 <button class="nav-el neon-o liquid-glass" data-category="Anim">Animations</button>
-                <button class="nav-el neon-o liquid-glass" data-category="Drone">Drone Footage</button>
+                <!-- <button class="nav-el neon-o liquid-glass" data-category="Drone">Drone Footage</button> -->
                 <button class="nav-el neon-o liquid-glass" data-category="Photo">Photography</button>
             </div>
             <br><br>
 
             <div class="photo-grid centered">
 
-                <div class="grid-item" data-category="Photo">
-                    <img src="../images/fulls/PortfolioIMG0.jpg" alt="Image 1">
+                
+                <div class="grid-item" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG53.jpg" alt="Image 3">
                 </div>
-
+                
+                <div class="grid-item prominent" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG54.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG55.jpg" alt="Image 3">
+                </div>
+                
                 <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG1.jpg" alt="Image 2">
                 </div>
-                                <div class="grid-item" data-category="3D">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG2.jpg" alt="Image 2">
                 </div>
-                                <div class="grid-item" data-category="3D">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG3.jpg" alt="Image 2">
                 </div>
-                                <div class="grid-item" data-category="2D 3D">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG4.jpg" alt="Image 2">
                 </div>
-
+                
                 <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG5.jpg" alt="Image 3">
                 </div>
-
+                
                 <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG6.jpg" alt="Image 3">
                 </div>
-
+                
                 <div class="grid-item prominent" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG7.jpg" alt="Image 3">
                 </div>
-
+                
                 <div class="grid-item" data-category="2D">
                     <img src="../images/fulls/PortfolioIMG8.png" alt="Image 3">
+                </div>
+                
+                <div class="grid-item prominent-tall" data-category="2D">
+                    <img src="../images/fulls/PortfolioIMG9.png" alt="Image 3">
                 </div>
 
                 <div class="grid-item" data-category="2D">
                     <img src="../images/fulls/PortfolioIMG10.png" alt="Image 3">
                 </div>
-
+                
                 <div class="grid-item" data-category="2D">
                     <img src="../images/fulls/PortfolioIMG11.png" alt="Image 3">
                 </div>
-
+                
                 <div class="grid-item" data-category="2D">
                     <img src="../images/fulls/PortfolioIMG12.png" alt="Image 3">
                 </div>
-
+                
                 <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG13.jpg" alt="Image 3">
                 </div>
-
+                
                 <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG14.jpg" alt="Image 3">
                 </div>
-
+                
                 <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG15.jpg" alt="Image 3">
                 </div>
-
+                
                 <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG16.jpg" alt="Image 3">
                 </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG0.jpg" alt="Image 1">
+                </div>
 
-                <div class="grid-item" data-category="3D">
+                <div class="grid-item prominent" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG17.jpg" alt="Image 3">
                 </div>
 
@@ -189,7 +244,7 @@ ____             __  ____      ___
                     <img src="../images/fulls/PortfolioIMG23.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="3D">
+                <div class="grid-item prominent" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG24.jpg" alt="Image 3">
                 </div>
 
@@ -209,7 +264,7 @@ ____             __  ____      ___
                     <img src="../images/fulls/PortfolioIMG28.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="2D 3D">
+                <div class="grid-item prominent" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG29.png" alt="Image 3">
                 </div>
 
@@ -261,7 +316,7 @@ ____             __  ____      ___
                     <img src="../images/fulls/PortfolioIMG41.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="2D 3D">
+                <div class="grid-item prominent" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG42.jpg" alt="Image 3">
                 </div>
 
@@ -293,7 +348,7 @@ ____             __  ____      ___
                     <img src="../images/fulls/PortfolioIMG49.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="2D 3D">
+                <div class="grid-item prominent" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG50.jpg" alt="Image 3">
                 </div>
 
@@ -301,20 +356,152 @@ ____             __  ____      ___
                     <img src="../images/fulls/PortfolioIMG51.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="3D">
-                    <img src="../images/fulls/PortfolioIMG52.jpg" alt="Image 3">
+                <div class="grid-item" data-category="2D 3D">
+                    <img src="../images/fulls/PortfolioIMG56.jpg" alt="Image 3">
+                </div>
+
+                <div class="grid-item" data-category="2D">
+                    <img src="../images/fulls/PortfolioIMG57.png" alt="Image 3">
                 </div>
 
                 <div class="grid-item" data-category="3D">
-                    <img src="../images/fulls/PortfolioIMG53.jpg" alt="Image 3">
+                    <img src="../images/fulls/PortfolioIMG58.jpg" alt="Image 3">
+                </div>
+
+                <div class="grid-item" data-category="2D">
+                    <img src="../images/fulls/PortfolioIMG59.png" alt="Image 3">
                 </div>
 
                 <div class="grid-item" data-category="3D">
-                    <img src="../images/fulls/PortfolioIMG54.jpg" alt="Image 3">
+                    <img src="../images/fulls/PortfolioIMG60.jpg" alt="Image 3">
                 </div>
 
                 <div class="grid-item" data-category="3D">
-                    <img src="../images/fulls/PortfolioIMG55.jpg" alt="Image 3">
+                    <img src="../images/fulls/PortfolioIMG61.png" alt="Image 3">
+                </div>
+
+                <div class="grid-item" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG62.jpg" alt="Image 3">
+                </div>
+
+                <div class="grid-item" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG63.png" alt="Image 3">
+                </div>
+
+                <div class="grid-item" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG64.jpg" alt="Image 3">
+                </div>
+
+                <div class="grid-item prominent-wide" data-category="2D">
+                    <img src="../images/fulls/PortfolioIMG65.png" alt="Image 3">
+                </div>
+
+                <div class="grid-item" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG66.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item prominent-wide" data-category="2D">
+                    <img style="width: 90%;" src="../images/fulls/PortfolioIMG67.png" alt="Image 3">
+                </div>
+                
+                <div class="grid-item prominent" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG68.jpg" alt="Image 3">
+                </div>
+
+                <div class="grid-item" data-category="2D 3D">
+                    <img src="../images/fulls/PortfolioIMG69.jpg" alt="Image 3">
+                </div>
+
+                <div class="grid-item" data-category="2D 3D">
+                    <img src="../images/fulls/PortfolioIMG70.jpg" alt="Image 3">
+                </div>
+
+                <div class="grid-item" data-category="2D 3D">
+                    <img src="../images/fulls/PortfolioIMG71.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="2D 3D">
+                    <img src="../images/fulls/PortfolioIMG72.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="2D 3D">
+                    <img src="../images/fulls/PortfolioIMG73.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="2D 3D">
+                    <img src="../images/fulls/PortfolioIMG74.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG75.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="2D">
+                    <img src="../images/fulls/PortfolioIMG76.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item prominent-tall" data-category="3D">
+                    <img src="../images/fulls/PortfolioIMG77.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG78.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG79.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG80.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item prominent-wide" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG81.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG82.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG83.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item prominent-wide" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG84.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG85.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item prominent-wide" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG86.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item prominent" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG87.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG88.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG89.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG90.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG91.jpg" alt="Image 3">
+                </div>
+                
+                <div class="grid-item" data-category="Photo">
+                    <img src="../images/fulls/PortfolioIMG92.jpg" alt="Image 3">
                 </div>
 
             </div>
