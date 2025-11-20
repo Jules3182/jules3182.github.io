@@ -33,6 +33,10 @@ This page will have 4 main categories:
                 button.addEventListener('click', () => {
                     const selectedCategory = button.getAttribute('data-category');
 
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+                    button.classList.add('active');
+
                     gridItems.forEach((item) => {
                         const itemCategories = item.getAttribute('data-category').split(' ');
 
@@ -55,21 +59,19 @@ This page will have 4 main categories:
 <body>
     
     <div class="full">
+
+        <br><br><br>
+
         <ul class="navbar centered">
             <li class=""><a class="nav-el neon-o liquid-glass" href="../index.html">Home</a></li>
             <li class=""><a class="nav-el neon-o liquid-glass" href="/portfolio/index.html">Portfolio</a></li>
             <li class=""><a class="nav-el neon-o liquid-glass" href="../resources.html">resources</a></li>
             <li class=""><a class="nav-el neon-o liquid-glass" href="">Other</a></li>
-                    <!--<li>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <div class="slider neon-o nav-el nav-txt"></div>
-                        </label>
-                    </li> -->
-            </ul>
+        </ul>
         <!-- Main Stuff -->
+        <br>
     <div class="centered">
-        <pre class="ascii-title">
+        <pre style="font-size: 200%;" class="ascii-title">
 ____             __  ____      ___
    / __ \____  _____/ /_/ __/___  / (_)___
    / /_/ / __ \/ ___/ __/ /_/ __ \/ / / __ \
@@ -77,6 +79,9 @@ ____             __  ____      ___
 /_/    \____/_/   \__/_/  \____/_/_/\____/
 
         </pre>
+        <div style="padding: 0% 20% 0% 20%;">
+            <p>This is a collection of some of my favorite works. Feel free to look around and I hope you enjoy!</p>
+        </div>
     </div>
         <br><br>
 
@@ -86,227 +91,229 @@ ____             __  ____      ___
             <div class="category-buttons centered">
                 <button class="nav-el neon-o liquid-glass" data-category="all">All</button>
                 <button class="nav-el neon-o liquid-glass" data-category="3D">3D Art</button>
-                <button class="nav-el neon-o liquid-glass" data-category="3D">2D Art</button>
+                <button class="nav-el neon-o liquid-glass" data-category="2D">2D Art</button>
                 <button class="nav-el neon-o liquid-glass" data-category="Anim">Animations</button>
                 <button class="nav-el neon-o liquid-glass" data-category="Drone">Drone Footage</button>
                 <button class="nav-el neon-o liquid-glass" data-category="Photo">Photography</button>
             </div>
             <br><br>
 
-
             <div class="photo-grid centered">
-                <div class="grid-item" data-category="category1 category2">
+
+                <div class="grid-item" data-category="Photo">
                     <img src="../images/fulls/PortfolioIMG0.jpg" alt="Image 1">
                 </div>
-                <div class="grid-item" data-category="category2">
+
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG1.jpg" alt="Image 2">
                 </div>
-                                <div class="grid-item" data-category="category2">
+                                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG2.jpg" alt="Image 2">
                 </div>
-                                <div class="grid-item" data-category="category2">
+                                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG3.jpg" alt="Image 2">
                 </div>
-                                <div class="grid-item" data-category="category2">
+                                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG4.jpg" alt="Image 2">
                 </div>
-                <div class="grid-item" data-category="category1 category3">
+
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG5.jpg" alt="Image 3">
                 </div>
-                <div class="grid-item" data-category="category1 category3">
+
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG6.jpg" alt="Image 3">
                 </div>
-                <div class="grid-item" data-category="category1 category3">
+
+                <div class="grid-item prominent" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG7.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D">
                     <img src="../images/fulls/PortfolioIMG8.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D">
                     <img src="../images/fulls/PortfolioIMG10.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D">
                     <img src="../images/fulls/PortfolioIMG11.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D">
                     <img src="../images/fulls/PortfolioIMG12.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG13.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG14.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG15.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG16.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG17.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG18.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG19.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG20.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG21.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG22.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG23.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG24.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG25.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG26.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG27.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D">
                     <img src="../images/fulls/PortfolioIMG28.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG29.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG30.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG31.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG32.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG33.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG34.png" alt="Image 3">
                 </div>
 
-
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG35.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG36.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG37.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG38.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG39.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG40.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG41.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG42.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG43.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG44.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG45.jpg" alt="Image 3">
                 </div>
 
-
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG46.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG47.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG48.png" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG49.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="2D 3D">
                     <img src="../images/fulls/PortfolioIMG50.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG51.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG52.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG53.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG54.jpg" alt="Image 3">
                 </div>
 
-                <div class="grid-item" data-category="category1 category3">
+                <div class="grid-item" data-category="3D">
                     <img src="../images/fulls/PortfolioIMG55.jpg" alt="Image 3">
                 </div>
 

@@ -48,3 +48,18 @@ body {
 .grid-item img:hover {
     transform: scale(1.1);
 }
+
+.prominent {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.category-buttons button {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.category-buttons button.active {
+    background: rgba(255, 255, 255, 0.621);
+    transform: scale(1.05);
+}
