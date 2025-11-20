@@ -46,6 +46,12 @@ body {
     transition: all 1s ease;
 }
 
+.grid-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .grid-item img:hover {
     transform: scale(1.1);
 }
@@ -55,6 +61,10 @@ body {
     grid-column: span 2;
 }
 
+.prominent-video{
+    grid-row: span 3;
+    grid-column: span 2;
+}
 .prominent-wide {
     grid-column: span 2;
 }
@@ -76,3 +86,4 @@ body {
     background: rgba(255, 255, 255, 0.621);
     transform: scale(1.05);
 }
+
