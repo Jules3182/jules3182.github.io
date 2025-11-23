@@ -3,12 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HXN STUDIOS</title>
-
+    <title>HEXENRING STUDIOS</title>
+    <script src="https://kit.fontawesome.com/e67447dbc9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>WELCOME TO THE HEXENRING</h1>
+
+<div class="wrap">
+  <main class="terminal" role="main" aria-labelledby="site-title">
+    <div class="main">
+      <div class="titlebar" aria-hidden="true">
+        <div class="dot"></div>
+        <div class="dot white"></div>
+        <div class="dot"></div>
+        <div class="title"></div>
+      </div>
+
+      <h1 class="mini-title muted mono">WELCOME TO THE</h1>
+      <h1 id="site-title" class="logo mono">
+<pre>  _    _ ________   ________ _   _ _____  _____ _   _  _____ 
+ | |  | |  ____\ \ / /  ____| \ | |  __ \|_   _| \ | |/ ____|
+ | |__| | |__   \ V /| |__  |  \| | |__) | | | |  \| | |  __ 
+ |  __  |  __|   > < |  __| | . ` |  _  /  | | | . ` | | |_ |
+ | |  | | |____ / . \| |____| |\  | | \ \ _| |_| |\  | |__| |
+ |_|  |_|______/_/ \_\______|_| \_|_|  \_\_____|_| \_|\_____|
+                                                             
+                                                             
+</pre>
+      </h1>
+
+      <div class="tagline">I provide a wide range of skills to solve your problems ranging from IT solutions and consultation to consumer decice repair, graphic design and more.  </div>
+
+      <div class="prompt" aria-hidden="false">
+        <div class="cmd mono">
+           contact --me "below"<span class="cursor" aria-hidden="true"></span>
+        </div>
+
+        <!--
+        <a class="cta mono" href="#features" role="button" aria-label="Explore features">
+          › FEATURES
+        </a>
+        -->
+      </div>
+      <div class="console" aria-live="polite">
+        <div class="line">→ Number:   <span class="muted kbd">(860) 977-8060</span></div>
+        <div class="line">→ Telegram:   <span class="muted kbd">@hxnrng</span></div>
+        <div class="line">→ Instagram:   <span class="muted kbd">@hxnrng</span></div>
+      </div>
+
+      <section id="features" style="margin-top:14px;">
+        <div class="features" role="list">
+          <div class="card" role="listitem">
+            <h5>Want more privacy?</h5>
+            <p style="white-space: nowrap;" class="muted">I hear this is pretty good:</p>
+            <br>
+            <button onclick="showKey()" class="cta mono">Show PGP Key</button>
+            <button onclick="copyKey(this)" style="" id="pub-key" class="pub-key hidden cta mono">
+              <i id="copyIcon" class="fa-regular fa-copy"></i>
+            </button>
+            <br>
+            <span id="pub-key" class="pub-key hidden kbd key-text"> <!-- JUST AN EXAMPLE!!!-->
+            -----BEGIN PGP PUBLIC KEY BLOCK----- <br>
+Comment: Alice's OpenPGP certificate<br>
+Comment: https://www.ietf.org/id/draft-bre-openpgp-samples-01.html<br>
+
+mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/U
+b7O1u120JkFsaWNlIExvdmVsYWNlIDxhbGljZUBvcGVucGdwLmV4YW1wbGU+iJAE
+ExYIADgCGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AWIQTrhbtfozp14V6UTmPy
+MVUMT0fjjgUCXaWfOgAKCRDyMVUMT0fjjukrAPoDnHBSogOmsHOsd9qGsiZpgRnO
+dypvbm+QtXZqth9rvwD9HcDC0tC+PHAsO7OTh1S1TC9RiJsvawAfCPaQZoed8gK4
+OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3s
+E9+eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIb
+DAAKCRDyMVUMT0fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/cDW4xN80fsn
+0QEA22Kr7VkCjeAEC08VSTeV+QFsmz55/lntWkwYWhmvOgE=
+=iIGO<br>
+-----END PGP PUBLIC KEY BLOCK-----
+            </span>
+          </div>
+        <!--
+          <div class="card" role="listitem">
+            <h5>Card Title</h5>
+            <p>explaination</p>
+          </div>
+        -->
+        </div>
+      </section>
+    </div>
+
+    <aside class="side" aria-label="Site information">
+      <div class="meta">
+        <h4>Services:</h4>
+
+        <div class="stat-row">
+          <div>
+            <div class="stat">Local "Cloud" Storage Solution</div>
+            <div class="stat-label">I will build, set up and deploy a reliable, fast, and secure storage server to fit your needs weather personal or professional.</div>
+          </div>
+          <!-- <div>
+            <div class="stat">$100</div>
+            <div class="stat-label">Consult</div>
+          </div> -->
+        </div>
+
+          <hr class="muted">
+
+        <div class="stat-row">
+          <div>
+            <div class="stat">Website Building</div>
+            <div class="stat-label">Want to make a name for yourself on the web? Weather you're a small business, starting a side hustle, or just want to publish your hobbies to the world I'm here to help.</div>
+          </div>
+          <!-- <div>
+            <div class="stat">$50</div>
+            <div class="stat-label">Consult</div>
+          </div> -->
+        </div>
+
+          <hr class="muted">
+
+        <div class="stat-row">
+          <div>
+            <div class="stat">Device Repair</div>
+            <div class="stat-label">Cracked screen? Overheating? Running slow? Got a virus? Doesn't matter to me, I'll have you up and running again in no time.</div>
+          </div>
+          <!-- <div>
+            <div class="stat">$50</div>
+            <div class="stat-label">Consult</div>
+          </div> -->
+        </div>
+
+        <hr class="muted">
+
+        <div class="stat-row">
+          <div>
+            <div class="stat">Small Business IT</div>
+            <div class="stat-label">Setting up WiFi, POS Systems, Speaker systems, Security systems, and more. There are lots of small, easy to overlook things that go into opening a business. I'm your guy.</div>
+          </div>
+          <!-- <div>
+            <div class="stat">42</div>
+            <div class="stat-label">Tasks</div>
+          </div> -->
+        </div>
+
+        <hr class="muted">
+        
+        <div class="stat-row">
+          <div>
+            <div class="stat">Graphic Design</div>
+            <div class="stat-label">I specialize in 3D artwork, but am versed in the adobe suite (<span class="kbd">Ps</span>, <span class="kbd">Ai</span>, <span class="kbd">Pr</span>, <span class="kbd">Lr</span>, <span class="kbd">Ae</span>) aswell and am more than able to bring your ideas to life.</div>
+          </div>
+          <!-- <div>
+            <div class="stat">42</div>
+            <div class="stat-label">Tasks</div>
+          </div> -->
+        </div>
+
+        <hr class="muted">
+        
+        <div class="stat-row">
+          <div>
+            <div class="stat">In-home IT</div>
+            <div class="stat-label">Very similar to the small business It section, just more variation and personalization. Weather it's fixing your WiFi / printer, or setting up a full smart home, I can do it for you.</div>
+          </div>
+          <!-- <div>
+            <div class="stat">42</div>
+            <div class="stat-label">Tasks</div>
+          </div> -->
+        </div>
+
+        <hr class="muted">
+        
+      </div>
+      <div class="meta">
+        <h3>Don't see what you're looking for?</h3>
+        <hr class="muted">
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div>Reach out anyways. I'm sure I can find a way to assist.</div>
+        </div>
+      </div>
+
+    </aside>
+  </main>
+</div>
+
+<!-- Show/hide the key -->
+<script>
+  function showKey() {
+    const keys = document.querySelectorAll(".pub-key");
+    keys.forEach(key => key.classList.toggle("show"));
+  }
+</script>
+
+<!-- Copy the key and change the icon (BROKEN) -->
+<script>
+  function copyKey(btn) {
+    const textElement = btn.nextElementSibling; 
+    const text = textElement.innerText;
+
+    const icon = btn.querySelector("i");
+
+    navigator.clipboard.writeText(text).then(() => {
+      icon.classList.remove("fa-regular", "fa-copy");
+      icon.classList.add("fa-solid", "fa-clipboard-check");
+
+      setTimeout(() => {
+        icon.classList.remove("fa-solid", "fa-clipboard-check");
+        icon.classList.add("fa-regular", "fa-copy");
+      }, 1000);
+    });
+  }
+</script>
+
+<!-- Cursor animation -->
+<script>
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const cmd = document.querySelector('.cmd');
+    if (!cmd) return;
+    const cursor = cmd.querySelector('.cursor');
+
+    const text = cmd.textContent.trim();
+    cmd.textContent = '$ ';
+    let i = 0;
+    const speed = 40;
+    function type(){
+      if(i < text.length){
+        cmd.textContent += text[i++];
+        cmd.appendChild(cursor);
+        setTimeout(type, speed);
+      } else {
+      }
+    }
+    setTimeout(type, 500);
+  })();
+</script>
 
 </body>
 </html>
