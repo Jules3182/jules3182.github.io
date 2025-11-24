@@ -31,6 +31,25 @@ body {
     height: 100%;
 }
 
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--fg-color);
+  opacity: 0.12;
+  box-shadow: none;
+}
+.dot.white {
+  opacity: 0.18;
+}
+
+.titlebar{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
 @media (max-width: 1079px) {
     .mobile-menu { display: block; }
     .c2 { display: none !important; }
@@ -304,6 +323,19 @@ a:hover {
     text-transform: uppercase;
 }
 
+.mob-butt {
+    width: 30%;
+    padding-top: 10px;
+}
+
+.mbt {
+/*
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+*/    
+    font-size: 3vw;
+    margin-left: 1vw;
+}
 /* ==============================
    Resource page Styles
 ============================== */
@@ -515,6 +547,15 @@ input:checked + .slider:before {
     body {
         overflow-y: scroll;
         overflow-x: hidden;
+    }
+    .infobox {
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .titlebar {
+        margin-top: -10px;
+        margin-left: 10px;
     }
 }
 

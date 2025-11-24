@@ -91,6 +91,7 @@ html,body{
   align-items: center;
   margin-bottom: 8px;
 }
+
 .dot{
   width: 10px;
   height: 10px;
@@ -99,9 +100,11 @@ html,body{
   opacity: 0.12;
   box-shadow: none;
 }
+
 .dot.white {
   opacity: 0.18;
 }
+
 .title{
   margin-left: auto;
   font-size: 12px;
