@@ -32,15 +32,33 @@ body {
 }
 
 .dot{
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: var(--fg-color);
   opacity: 0.12;
   box-shadow: none;
 }
+
 .dot.white {
   opacity: 0.18;
+}
+
+.dot:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.dot.d1:hover {
+  background: limegreen;
+}
+
+.dot.d2:hover {
+  background: orange;
+}
+
+.dot.d3:hover {
+  background-color: red;
 }
 
 .titlebar{
@@ -326,6 +344,7 @@ a:hover {
 .mob-butt {
     width: 30%;
     padding-top: 10px;
+    padding-left: 2vw;
 }
 
 .mbt {
@@ -335,6 +354,10 @@ a:hover {
 */    
     font-size: 3vw;
     margin-left: 1vw;
+}
+
+.port-bar {
+    padding-top: 10px;
 }
 /* ==============================
    Resource page Styles
@@ -556,6 +579,10 @@ input:checked + .slider:before {
     .titlebar {
         margin-top: -10px;
         margin-left: 10px;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
     }
 }
 
