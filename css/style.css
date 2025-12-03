@@ -161,6 +161,17 @@ p {
     color: #8e8e8e;
 }
 
+.resource-desc {
+    color: white;
+    font-size: 3vw;
+    padding-top: 10px;
+}
+
+.plugin-list {
+    color: white;
+    padding-left: 59px;
+    list-style-type: "├─ ";
+}
 /* ==============================
    Page lyout
 ============================== */
@@ -375,19 +386,22 @@ h1.page-title {
 }
 
 .resource-card {
-    background-color: var(--gruv-bg);
-    border: 1px solid var(--fg-color);
+    border: 1px solid grey;
     border-radius: 15px;
+    width: 99%;
     padding: 1.5rem;
     margin-bottom: 2rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.resource-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 0px 15px var(--fg-color);
+.title.rsc-ttl {
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
-
 .resource-card h2 {
     margin-top: 0;
     margin-bottom: 0.5rem;

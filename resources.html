@@ -40,6 +40,11 @@ Obsidian Addons:
     <script src="https://kit.fontawesome.com/e67447dbc9.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/script.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style>
+        p {
+          text-transform: none;
+        }
+    </style>
 </head>
   <ul class="navbar centered">
         <li><a class="nav-el neon-o liquid-glass" href="index.html">Home</a></li>
@@ -49,18 +54,151 @@ Obsidian Addons:
     </ul>
 
     <div class="resources-container">
-        <h1 class="page-title title">My Favorite Tools & Resources</h1>
+        <!-- <h1 class="page-title title">My Favorite Tools & Resources</h1> -->
 
 <!-- RESOURCE CATEGORIES -->
 
+    <!-- General -->
+    <div class="resource-category">
+        <div style="margin-bottom: 20px; margin-top: 10px;" class="titlebar">
+            <div class="dot"></div>
+            <div class="dot white"></div>
+            <div class="dot"></div>
+            <div class="title rsc-ttl"><h2>General</h2></div>
+        </div>
+        <hr>
+        <h3 class="resource-desc">Everyday tools I couldn't live without.</h3>
+        <br>
+        
+        <div class="resource-card">
+            <h2 class="sub-title">Obsidian</h2>
+            <p>This app is my bread and butter for literally everything. I use it to plan my life, write down ideas, map out my projects, and so so much more. I've gotten great use out of daily notes and the Tracker plugin for graphing out my habbits, mood, and money over the last year. It's genueinly been monumental for me. Below I've listed some of the most useful plugins I've encountered that completely transformed the way I use the app.</p>
+            <h3 class="sub-sub-title">Plugins:</h3>
+            <!-- List of my favorite plugins -->
+            <ul class="plugin-list">
+                <li>Tracker</li>
+                <li>Advanced Canvas</li>
+                <li>Waypoint</li>
+                <li>Timeline</li>
+                <li>Templater</li>
+            </ul>
+        </div>
+        
+        <div class="resource-card">
+            <h2 class="sub-title">Mulvad VPN</h2>
+            <p>Just the best VPN around. Hands down. Works great on all my devices, great options, cool team. What else can you really ask for? Their browser is pretty good too, just slightly too security forward to be my daily driver.</p>
+        </div>
+
+        <div class="resource-card">
+            <h2 class="sub-title">Tailscale</h2>
+            <p>Super powerful tool to bridge your devices under one "network". Awesome for checking on my home network on the go and accessing self hosted tools from anywhere.</p>
+        </div>
+
+        <div class="resource-card">
+            <h2 class="sub-title">Chrome Remote Desktop</h2>
+            <p>Yeah yeah I know. Not the most secure deployment level solution out there, but for checking a render on my workstation from my phone or starting up an app while I'm away from home it just works.</p>
+        </div>
+
+        <div class="resource-card">
+            <h2 class="sub-title">Windows Power toys</h2>
+            <p>Especially Power rename, quick image resize, and fancy zones are my favorites.</p>
+        </div>
+    </div>
+
+
+    <!-- IT -->
+    <div class="resource-category">
+        <div class="titlebar">
+            <div class="dot"></div>
+            <div class="dot white"></div>
+            <div class="dot"></div>
+            <div class="title rsc-ttl"><h2>IT</h2></div>
+        </div>
+        <hr>
+        <h3 class="resource-desc">My favorite tools, programs, and helpful resources that allow me to put out fires more efficiently.</h3>
+        <br>
+        <!-- YUMI, clonezilla, crystaldiskmark, Balena etcher, whatever that one was that rebuilt my corrupted partition -->
+        <div class="resource-card">
+            <h2 class="sub-title">YUMI</h2>
+            <p>DESCRIPTION</p>
+            <!-- <a href="" target="_blank">LINK</a> -->
+        </div>
+
+        <div class="resource-card">
+            <h2 class="sub-title">Clonezilla</h2>
+            <p>DESCRIPTION</p>
+            <!-- <a href="" target="_blank">LINK</a> -->
+        </div>
+
+        <div class="resource-card">
+            <h2 class="sub-title">CrystalDiskMark</h2>
+            <p>DESCRIPTION</p>
+            <!-- <a href="" target="_blank">LINK</a> -->
+        </div>
+<!-- 
+        <div class="resource-card">
+            <h2 class="sub-title">RESOURCE NAME</h2>
+            <p>DESCRIPTION</p>
+            <a href="" target="_blank">LINK</a>
+        </div> -->
+
+        <div class="resource-card">
+            <h2 class="sub-title">Belena Etcher</h2>
+            <p>DESCRIPTION</p>
+            <!-- <a href="" target="_blank">LINK</a> -->
+        </div>
+
+    </div>
+    
+    
+    
+    <!-- Homelab -->
+    <div class="resource-category">
+        <div class="titlebar">
+            <div class="dot"></div>
+            <div class="dot white"></div>
+            <div class="dot"></div>
+            <div class="title rsc-ttl"><h2>Homelab</h2></div>
+        </div>
+        <hr>
+        <h3 class="resource-desc">My favorite scripts, tools, containers, and more. </h3>
+        <br>
+        <div class="resource-card">
+            <h2 class="sub-title">ProxMox</h2>
+            <p>DESCRIPTION</p>
+        </div>
+        
+        <div class="resource-card">
+            <h2 class="sub-title">NTFY</h2>
+            <p>DESCRIPTION</p>
+        </div>
+        
+        <div class="resource-card">
+            <h2 class="sub-title">Trunas Scale</h2>
+            <p>DESCRIPTION</p>
+        </div>
+        
+        <div class="resource-card">
+            <h2 class="sub-title">Docker</h2>
+            <p>DESCRIPTION</p>
+        </div>
+        
+        <div class="resource-card">
+            <h2 class="sub-title">Code Server</h2>
+            <p>This container is absolutely legendary. It's basically VS code hosted in a browser, which sounds simple at first, but it's enabled me to do so many things. It easily syncs my progress between devices, and brings full fat VS code power to devices that were never an option (like the iPad I am typing this on right now). In combination with tailscale this set up is out of this world for someone looking to shred some VS code on the go! I've heard theres a solid collaborative aspect to it but do your own research on that. I would recommend opening port 3000 & 3001 as well as the default 8000/80 when deploying this container for live view to work properly!</p>
+        </div>
+    </div>
+    
     <!-- Graphic Design -->
     <div class="resource-category">
         <div class="titlebar">
             <div class="dot"></div>
             <div class="dot white"></div>
             <div class="dot"></div>
+            <div class="title rsc-ttl"><h2>Graphic Design</h2></div>
         </div>
-        <h2 class="sub-title">Graphic Design:</h2>
+        <hr>
+        <h3 class="resource-desc">The tools I use to create the images in my mind.</h3>
         <br>
         <div class="resource-card">
             <h2 class="sub-title">Blender</h2>
@@ -69,14 +207,16 @@ Obsidian Addons:
         </div>
     </div>
 
-    <!-- Graphic Design -->
+    <!-- Hardware -->
     <div class="resource-category">
         <div class="titlebar">
             <div class="dot"></div>
             <div class="dot white"></div>
             <div class="dot"></div>
+            <div class="title rsc-ttl"><h2>Hardware</h2></div>
         </div>
-        <h2 class="sub-title">Category:</h2>
+        <hr>
+        <h3 class="resource-desc">My favorite gadgets and gizmos that I couldn't live without.</h3>
         <br>
         <div class="resource-card">
             <h2 class="sub-title">RESOURCE NAME</h2>
@@ -84,5 +224,26 @@ Obsidian Addons:
             <a href="" target="_blank">LINK</a>
         </div>
     </div>
+    
+    <div class="resource-category">
+        <div class="titlebar">
+            <div class="dot"></div>
+            <div class="dot white"></div>
+            <div class="dot"></div>
+            <div class="title rsc-ttl"><h2>Misc.</h2></div>
+        </div>
+        <hr>
+        <h3 class="resource-desc">Whatever other misc. tools and resources I find useful but don't fit in a catefogy!</h3>
+        <br>      
+
+        <div class="resource-card">
+            <h2 class="sub-title">CoreTemp</h2>
+            <p>This is a pretty basic tool but I really like it. Pretty much just shows your CPU temps in the taskbar. That it, I just like the way it looks and can be useful to check on things at a quick glance! I think it also comes with some sort of server option that can host a feed of the temps to other devices which could be super cool for some projects (maybe like an esp32 that pulls the temps and changes the lighting based on it in your room) But I've never tried it.</p>
+
+        </div>
+
+    </div>
+
+
 
 </html>
