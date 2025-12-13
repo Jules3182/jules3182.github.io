@@ -172,6 +172,12 @@ p {
     padding-left: 59px;
     list-style-type: "├─ ";
 }
+
+.plugin-list ul {
+    color: #8e8e8e;
+    padding-left: 30px;
+    list-style-type: "├─ ";
+}
 /* ==============================
    Page lyout
 ============================== */
@@ -255,7 +261,7 @@ p {
     z-index: 2;
 }
 
-.liquid-glass{
+.liquid-glass {
     position: relative;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px) saturate(180%) contrast(110%);
