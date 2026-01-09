@@ -340,23 +340,28 @@ a:hover {
 
 .navbar {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
     width: 100%;
-    display: inline-block;
-    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
 }
 
 .navbar li {
-    display: inline;
-    padding: 1%;
+    padding: 0;
 }
 
 .nav-el {
     display: inline-block;
     white-space: nowrap;
-    font-size: 2vh;
     font-weight: 400;
     text-transform: uppercase;
+
+    font-size: clamp(0.3rem, 1.3vw, 1.9rem);
 }
+
 
 .mob-butt {
     width: 30%;
