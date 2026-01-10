@@ -15,6 +15,14 @@
     --font-primary: "Elms Sans", sans-serif;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -363,26 +371,22 @@ a:hover {
 }
 
 
-.mob-butt {
-    width: 30%;
-    padding-top: 10px;
-    padding-left: 2vw;
-}
 
 .mbt {
-/*
+    /*
     border-bottom: 1px solid white;
     border-left: 1px solid white;
-*/    
+    */    
     font-size: 3vw;
     margin-left: 1vw;
 }
 
 .port-bar {
     padding-top: 10px;
+    list-style-type: none;
 }
 /* ==============================
-   Resource page Styles
+Resource page Styles
 ============================== */
 
 .resources-container {
@@ -433,7 +437,7 @@ h1.page-title {
     h1.page-title {
         font-size: 2.5rem;
     }
-
+    
     .resource-card {
         padding: 1rem;
     }
@@ -454,7 +458,7 @@ Added Bits and Bobs
 ############## */
 
 /* ==============================
-   Modal stuff
+Modal stuff
 ============================== */
 
 .modal {
@@ -498,7 +502,7 @@ Added Bits and Bobs
 }
 
 /* ==============================
-   Tooltips
+Tooltips
 ============================== */
 
 .tooltip {
@@ -525,7 +529,7 @@ Added Bits and Bobs
 }
 
 /* ==============================
-   Switch (toggle)
+Switch (toggle)
 ============================== */
 
 .switch {
@@ -571,25 +575,34 @@ input:checked + .slider:before {
 }
 
 /* ==============================
-   Mobile
+Mobile
 ============================== */
 
 .mobile-menu {
     display: none;
 }
 
-.menu-list {
-    list-style: none;
-    padding: 0;
-}
 
 .menu-list li {
     margin-bottom: 10px;
-    display: inline-block;
 }
 
 @media (max-width: 1079px) {
-    .mobile-menu { display: block; }
+    .mobile-menu {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: clamp(10px, 2vw, 30px);
+
+        flex-wrap: nowrap;
+        white-space: nowrap;
+
+        justify-content: center;
+    }
+    .menu-list li {
+        display: flex;
+        text-align: center;
+    }
     .c2 { display: none; }
     .c1 { width: 100%; }
     body {
@@ -608,6 +621,9 @@ input:checked + .slider:before {
     .dot {
         width: 10px;
         height: 10px;
+    }
+    .titlebar{
+        padding-top: 20px;
     }
 }
 
