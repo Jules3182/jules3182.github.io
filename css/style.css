@@ -367,22 +367,18 @@ a:hover {
     font-weight: 400;
     text-transform: uppercase;
 
-    font-size: clamp(0.3rem, 1.3vw, 1.9rem);
+    font-size: clamp(0.9rem, 1.3vw, 1.9rem);
 }
 
 
 
 .mbt {
-    /*
-    border-bottom: 1px solid white;
-    border-left: 1px solid white;
-    */    
-    font-size: 3vw;
     margin-left: 1vw;
 }
 
 .port-bar {
     padding-top: 10px;
+    width: 100%;
     list-style-type: none;
 }
 /* ==============================
