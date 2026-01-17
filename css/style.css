@@ -179,6 +179,8 @@ p {
     color: white;
     padding-left: 59px;
     list-style-type: "├─ ";
+    text-align: left;
+    font-size: 1.4vh;
 }
 
 .plugin-list ul {
