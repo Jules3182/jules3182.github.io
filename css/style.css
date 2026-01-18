@@ -633,3 +633,51 @@ Mobile
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    margin: 0px 100px 0px 100px;
+}
+
+.project-card {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.project-card.is-hidden {
+  display: none;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-content {
+  padding: 1rem 1.25rem;
+}
+
+.project-content h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.project-content p {
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.4;
+}

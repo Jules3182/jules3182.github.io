@@ -6,7 +6,6 @@
         <title>Julian Baker's Projects</title>
         <!-- Font Awesome Sick Stuff --->
         <script src="https://kit.fontawesome.com/e67447dbc9.js" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="../portfolio/script.js"></script>
         <link rel="stylesheet" href="../css/style.css" type="text/css">
         <link rel="stylesheet" href="../portfolio/style.css" type="text/css">
     </head>
@@ -31,7 +30,7 @@
         <!-- Main Stuff -->
     <br>
     <div class="centered">
-        <pre style="font-size: 2.5vw" class="ascii-title">
+        <pre style="font-size: clamp(1.6rem, 2vw, 2rem)" class="ascii-title">
     ____               _           __      
    / __ \_________    (_)__  _____/ /______
   / /_/ / ___/ __ \  / / _ \/ ___/ __/ ___/
@@ -39,28 +38,102 @@
 /_/   /_/   \____/_/ /\___/\___/\__/____/  
                 /___/                      
         </pre>
-        <div style="padding: 0% 20% 0% 20%;">
+        <div style="padding: 0% 10% 0% 20%;">
             <p>This is a collection of various projects I have worked on over the years. This ranges from code and maker projects to anything I've made that I am particularly proud of!</p>
             <br>
             <br>
         </div>
     </div>
+    
+    <!-- Main Stuff -->
+    <div class="portfolio-main centered">
+        <div class="category-buttons centered">
+            <button class="nav-el neon-o liquid-glass nav-txt mbt" data-filter="all">All</button>
+            <button class="nav-el neon-o liquid-glass nav-txt mbt" data-filter="code">Code</button>
+            <button class="nav-el neon-o liquid-glass nav-txt mbt" data-filter="maker">Maker</button>
+            <button class="nav-el neon-o liquid-glass nav-txt mbt" data-filter="tech">Tech</button>
+            <button class="nav-el neon-o liquid-glass nav-txt mbt" data-filter="misc">Misc</button>
+            <!-- <button class="nav-el neon-o liquid-glass nav-txt mbt" data-filter="wip">WIP</button>
+            <button class="nav-el neon-o liquid-glass nav-txt mbt" data-filter="completed">Completed</button> -->
         </div>
-
-        <!-- Main Stuff -->
-        <div class="portfolio-main centered">
-            <div class="category-buttons centered">
-                <button class="nav-el neon-o liquid-glass nav-txt mbt" data-category="all">All</button>
-                <button class="nav-el neon-o liquid-glass nav-txt mbt" data-category="code">Code</button>
-                <button class="nav-el neon-o liquid-glass nav-txt mbt" data-category="maker">Maker</button>
-                <button class="nav-el neon-o liquid-glass nav-txt mbt" data-category="tech">Tech</button>
-                <button class="nav-el neon-o liquid-glass nav-txt mbt" data-category="misc">Misc</button>
-            </div>
+    </div>
             <br><br>
         </div>
 
-            <div class="photo-grid centered">
-            </div>
+        <section class="projects-grid">
+            <article class="project-card" data-category="tech">
+                <img src="images/nobara011826.png" alt="Project 1 preview" />
+                <div class="project-content">
+                <h3 style="color: white;">Nobara Rice</h3>
+                <p>My personal Nobara set up with Gnome for programming, music production, content creation, and of course gaming</p>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="maker">
+                <img src="../images/fulls/PortfolioIMG106.JPEG" alt="Project 2 preview" />
+                <div class="project-content">
+                <h3 style="color: white;">7in Cinematic Quad Build</h3>
+                <p>A 7in FPV drone built for smooth, stable videography and (relatively) long range flights</p>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="tech">
+                <img src="images/HomeLabLayout.png" alt="Project 3 preview" />
+                <div class="project-content">
+                <h3 style="color: white;">Home Lab Build</h3>
+                <p>My homelab set up for self hosting various applications that make my life easier (Currently in the planning Phase)</p>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="code">
+                <img src="images/Hexfolio.png" alt="Project 3 preview" />
+                <div class="project-content">
+                <h3 style="color: white;">Hexfolio</h3>
+                <p>A Self Hosted Stock Portfolio Dashboard with a FastAPI back end written in Python</p>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="tech">
+                <img src="images/PCv2.JPEG" alt="Project 3 preview" />
+                <div class="project-content">
+                <h3 style="color: white;">Custom PC Case V2</h3>
+                <p>A more sleek and futuristic concept for a custom PC case built with solid stainless steel and tempered glass</p>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="tech">
+                <img src="../images/fulls/PortfolioIMG55.jpg" alt="Project 3 preview" />
+                <div class="project-content">
+                <h3 style="color: white;">Custom PC Case V1</h3>
+                <p>An older concept I had for a custom PC case</p>
+                </div>
+            </article>
+
+        </section>
+
     </div>
 </body>
+<!-- Sorting Label Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".category-buttons button");
+  const cards = document.querySelectorAll(".project-card");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      cards.forEach(card => {
+        const category = card.dataset.category;
+
+        if (filter === "all" || category === filter) {
+          card.classList.remove("is-hidden");
+        } else {
+          card.classList.add("is-hidden");
+        }
+      });
+    });
+  });
+});
+</script>
 </html>
