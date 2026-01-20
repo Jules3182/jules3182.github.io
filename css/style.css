@@ -15,8 +15,10 @@
     --font-primary: "Elms Sans", sans-serif;
 }
 
-html {
+html, body {
     -webkit-text-size-adjust: 100%;
+    width: 100%;
+    max-width: 100%;
 }
 
 body {
@@ -82,7 +84,7 @@ body {
     .c1 { 
         width: 100% !important;
         margin: 0 auto !important;
-        max-width: 110%;
+        max-width: 100% !important;
         padding: 0 20px;
         justify-content: center !important;
     }
@@ -101,7 +103,7 @@ p, a, button {
 
 p {
     text-transform: uppercase;
-    font-size: 2.2vh;
+    font-size: clamp(0.9rem, 2.2vh, 1.2rem);
 }
 
 .title {
@@ -132,7 +134,7 @@ p {
     z-index: 2;        /* ensures no blurring hits the text */
     color: rgba(255,255,255,0.9);
     font-weight: 700;
-    font-size: 6rem;
+    font-size: clamp(2.5rem, 8vw, 6rem);
 
     /* Optional: vertical stretch */
     transform: scaleY(1.2);
@@ -218,8 +220,8 @@ p {
 }
 
 .column {
-    float: left;
-    width: 50%;
+    float: none;
+    width: 100%;
     margin-top: 5vh;
 }
 
@@ -352,11 +354,13 @@ a:hover {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2vw;
+    gap: clamp(8px, 1.2em, 16px);
     width: 100%;
     padding: 0;
     margin: 0;
     flex-wrap: nowrap;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .navbar li {
@@ -592,17 +596,28 @@ Mobile
         flex-direction: row;
         gap: clamp(10px, 2vw, 30px);
 
-        flex-wrap: nowrap;
-        white-space: nowrap;
+        flex-wrap: wrap;
+        white-space: wrap;
+        overflow-x: hidden;
+        max-width: 100%;
 
         justify-content: center;
+    }
+        .mobile-menu .nav-el {
+        font-size: clamp(0.7rem, 3.5vw, 1.1rem);
+        padding: 0.25rem 0.5rem;
     }
     .menu-list li {
         display: flex;
         text-align: center;
     }
-    .c2 { display: none; }
-    .c1 { width: 100%; }
+    .c2 {
+        display: none;
+    }
+    .c1 {
+        width: 100%;
+        max-width: 100%;
+    }
     body {
         overflow-y: scroll;
         overflow-x: hidden;
@@ -622,6 +637,9 @@ Mobile
     }
     .titlebar{
         padding-top: 20px;
+    }
+    .nav-el{
+        font-size: 30px;
     }
 }
 
@@ -644,40 +662,43 @@ Mobile
 }
 
 .project-card {
-  background: #111;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px) saturate(180%) contrast(110%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%) contrast(110%);
+    border-radius: 12px;
+    /* border: 1px solid rgba(255, 255, 255, 0.15); NOT SOLD ON THIS TBH*/
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
 }
 
 .project-card.is-hidden {
-  display: none;
+    display: none;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .project-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
 }
 
 .project-content {
-  padding: 1rem 1.25rem;
+    padding: 1rem 1.25rem;
 }
 
 .project-content h3 {
-  font-size: 1.1rem;
-  margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
 }
 
 .project-content p {
-  font-size: 0.9rem;
-  color: #aaa;
-  line-height: 1.4;
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.4;
 }
