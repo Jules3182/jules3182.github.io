@@ -702,3 +702,37 @@ Mobile
     color: #aaa;
     line-height: 1.4;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(-180%) contrast(110%) brightness(-60%);
+    -webkit-backdrop-filter: blur(20px) saturate(-180%) contrast(110%) brightness(-60%);
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    cursor: pointer;
+}
