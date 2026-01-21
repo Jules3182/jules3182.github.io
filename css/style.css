@@ -275,7 +275,7 @@ p {
 
 .liquid-glass {
     position: relative;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(82, 82, 82, 0.08);
     backdrop-filter: blur(12px) saturate(180%) contrast(110%);
     -webkit-backdrop-filter: blur(12px) saturate(180%) contrast(110%);
     border-radius: 10px;
@@ -638,8 +638,12 @@ Mobile
     .titlebar{
         padding-top: 20px;
     }
-    .nav-el{
+    .nav-el {
         font-size: 30px;
+    }
+    .projects-grid {
+        margin: 0px 20px 0px 20px;
+        padding: 0.5rem;
     }
 }
 
@@ -655,7 +659,7 @@ Mobile
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
     margin: 0px 100px 0px 100px;
@@ -708,14 +712,19 @@ Mobile
     position: absolute;
     min-width: 140px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px) saturate(-180%) contrast(110%) brightness(-60%);
-    -webkit-backdrop-filter: blur(20px) saturate(-180%) contrast(110%) brightness(-60%);
+    background: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(20px) saturate(-180%) contrast(110%);
+    -webkit-backdrop-filter: blur(20px) saturate(-180%) contrast(110%);
     z-index: 1;
     border-radius: 10px;
     overflow: hidden;
 
     border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.dropbtn{
+    min-width: 140px;
+    text-align: center;
 }
 
 .dropdown-content a {
