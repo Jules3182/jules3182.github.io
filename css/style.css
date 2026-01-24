@@ -603,7 +603,7 @@ Mobile
 
         justify-content: center;
     }
-        .mobile-menu .nav-el {
+    .mobile-menu .nav-el {
         font-size: clamp(0.7rem, 3.5vw, 1.1rem);
         padding: 0.25rem 0.5rem;
     }
@@ -642,8 +642,8 @@ Mobile
         font-size: 30px;
     }
     .projects-grid {
-        margin: 0px 20px 0px 20px;
-        padding: 0.5rem;
+        margin: 0px !important;
+        grid-template-columns: repeat(auto-fit, 30%) !important;
     }
 }
 
