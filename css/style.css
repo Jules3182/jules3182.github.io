@@ -745,3 +745,13 @@ Mobile
     display: block;
     cursor: pointer;
 }
+
+.category-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.category-text.active {
+  opacity: 1;
+  pointer-events: auto;
+}

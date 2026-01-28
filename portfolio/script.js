@@ -1,18 +1,28 @@
 const categoryButtons = document.querySelectorAll('.category-buttons button');
 const gridItems = document.querySelectorAll('.grid-item');
+const categoryTexts = document.querySelectorAll('.category-text');
 
 categoryButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const selectedCategory = button.getAttribute('data-category');
 
-    gridItems.forEach((item) => {
-      const itemCategories = item.getAttribute('data-category').split(' ');
+    categoryTexts.forEach((text) => {
+      text.classList.toggle(
+        'active',
+        text.getAttribute('data-category') === selectedCategory
+      );
+    });
 
-      if (selectedCategory === 'all' || itemCategories.includes(selectedCategory)) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
+    gridItems.forEach((item) => {
+      const itemCategories = item
+        .getAttribute('data-category')
+        .split(' ');
+
+      item.style.display =
+        selectedCategory === 'all' ||
+        itemCategories.includes(selectedCategory)
+          ? 'block'
+          : 'none';
     });
   });
 });
