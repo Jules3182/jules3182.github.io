@@ -91,5 +91,20 @@ body {
 .category-buttons button.active {
     background: rgba(255, 255, 255, 0.621);
     transform: scale(1.05);
+    color: black;
 }
 
+.category-text {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.category-descriptions .category-text.active {
+    opacity: 1 !important;
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 120px;
+    margin-left: 40px;
+    margin-right: 40px;
+}

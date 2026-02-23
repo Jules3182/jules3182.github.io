@@ -7,10 +7,13 @@ categoryButtons.forEach((button) => {
     const selectedCategory = button.getAttribute('data-category');
 
     categoryTexts.forEach((text) => {
-      text.classList.toggle(
-        'active',
-        text.getAttribute('data-category') === selectedCategory
-      );
+      const textCategory = text.getAttribute('data-category');
+
+      if (textCategory === selectedCategory) {
+        text.classList.add('active')
+      } else {
+        text.classList.remove('active');
+      }
     });
 
     gridItems.forEach((item) => {
