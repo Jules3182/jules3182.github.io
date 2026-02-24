@@ -523,7 +523,6 @@ Tooltips
     font-size: 2.5rem;
     color: var(--gruv-aqua);
     position: absolute;
-    z-index: 1;
 }
 
 .tooltip:hover .tooltiptext {
@@ -754,4 +753,11 @@ Mobile
 .category-text.active {
   opacity: 1;
   pointer-events: auto;
+}
+
+.cat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 150px;
+    margin-left: 150px;
 }
