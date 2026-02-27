@@ -75,6 +75,11 @@ body {
     grid-column: span 2;
 }
 
+.prominent-wide-large {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
 .prominent-tall[data-category="2D"] img, .prominent-wide[data-category="2D"] img{
     object-fit: scale-down !important;
 }
