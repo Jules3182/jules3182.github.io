@@ -45,6 +45,14 @@ Obsidian Addons:
         p {
           text-transform: none;
         }
+        .code-snip {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.01);
+            color: rgb(151, 151, 151);
+        }
     </style>
 </head>
 <!-- RESOURCE CATEGORIES -->
@@ -298,11 +306,24 @@ Obsidian Addons:
         <hr>
         <h3 class="resource-desc">The tools I use to create the images in my mind.</h3>
         <br>
+
         <div class="resource-card">
             <h2 class="sub-title">Blender</h2>
             <p>Free and open-source 3D modeling, animation, and rendering software. Perfect for creating 3D assets for games, films, and designs.</p>
             <a href="https://www.blender.org/" target="_blank">Visit Blender</a>
         </div>
+
+        <div class="resource-card">
+            <h2 class="sub-title">REAL Video Enhancer / Flow Frames</h2>
+            <p>Two different video interpolation tools (Linux and Widnows) that can turn 30 fps renders into a smooth 60+ fps using RIFE. Not perfect for every usecase, but can save huge amounts of time halfing render time. I've had great results with motion graphics, video is hit or miss.</p>
+        </div>
+
+        <div class="resource-card">
+            <h2 class="sub-title">Image Magick</h2>
+            <p>Clean and powerful CLI image manipulation tool that I love. My primary use case is downscaling my export images for this website so the load times aren't awful, but its got a load of cool features and is highly recommended! <br> This is what I do to downscale to 1080 and keep the aspect ratio:</p>
+            <p><span class="code-snip">magick INPUTIMAGE -resize 1080x1080\> OUTPUTIMAGE</span></p>
+        </div>
+
     </div>
     <br><br>
 
