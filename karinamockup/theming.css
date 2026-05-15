@@ -1,0 +1,48 @@
+/* DARK THEME */
+.creator-card.dark {
+    background: #1a1a1a;
+    color: white;
+
+}
+
+.creator-card.dark .pfp {
+}
+
+.creator-card.dark .info {
+}
+
+.creator-card.dark .contact-btn {
+    background: grey;
+    color: white;
+    border: none;
+}
+
+/* LIGHT THEME */
+.creator-card.light {
+    background: white;
+    color: black;
+}
+
+.creator-card.light .pfp {
+    border: none;
+}
+
+.creator-card.light .contact-btn {
+    background: black;
+    color: white;
+}
+
+/* CUTESY THEME */
+.creator-card.cutesy {
+    background: #ffdae3;
+    color: #2d2f3b;
+}
+
+.creator-card.cutesy .pfp {
+    border: none;
+}
+
+.creator-card.cutesy .contact-btn {
+    background: black;
+    color: white;
+}

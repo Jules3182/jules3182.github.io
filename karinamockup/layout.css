@@ -1,0 +1,100 @@
+/* General Page Stuff */
+body {
+    background-color: black;
+}
+
+/* CREATOR CARD LAYOUT */
+
+.creator-card {
+    width: 600px;
+    padding: 20px;
+    margin-bottom: 100px;
+    border-radius: 14px;
+}
+
+.pfp {
+    width: 200px;
+    float: right;
+    border-radius: 14px;
+    margin-right: 20px;
+}
+
+.info {
+    height: 200px;
+    margin: -20px 0 0 20px;
+}
+
+.name {
+}
+
+.name-mod {
+    opacity: 60%;
+    margin-top: -10px;
+}
+
+.bus-name {
+
+}
+
+.bio {
+    margin: 20px;
+}
+
+h4.bio {
+    padding-bottom: 7px;
+    border-bottom: 1px solid;
+}
+
+hr.bio {
+    width: 150px;
+}
+
+.work-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.work-preview img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.card-bottom {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.payment li {
+    padding: 5px 35px 5px 5px;
+}
+
+.yes {
+    list-style-type: '✓';
+}
+
+.no {
+    list-style-type: '✕';
+}
+
+.contact-btn {
+    text-decoration: none;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    max-width: 102px;
+    border-radius: 4px;
+}
